@@ -43,6 +43,12 @@ set novisualbell                    " Don't use the visual bell
 set wrap                            " Wrap lineource $MYVIMRC
 set showmatch                       " Show matching (){}[]
 
+if (has('gui_running'))
+    set guioptions-=m                   " Remove menu bar
+    set guioptions-=T                   " Remove toolbar
+    set guioptions-=r                   " Remove right-hand scroll bar
+endif
+
 " Redraw screen
 nmap <leader>r :redraw!<cr>
 
