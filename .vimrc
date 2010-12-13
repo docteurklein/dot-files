@@ -6,6 +6,7 @@ set nocompatible                " Use vim defaults
 let mapleader=","               " Use the comma as leader
 set history=1000                " Increase history
 set nobackup                    " Do not backup files on overwrite
+set directory=~/.vim/tmp        " Directory to put swap file
 
 "
 " Coloration
@@ -44,9 +45,9 @@ set wrap                            " Wrap lineource $MYVIMRC
 set showmatch                       " Show matching (){}[]
 
 if (has('gui_running'))
-    set guioptions-=m                   " Remove menu bar
-    set guioptions-=T                   " Remove toolbar
-    set guioptions-=r                   " Remove right-hand scroll bar
+    set guioptions-=m               " Remove menu bar
+    set guioptions-=T               " Remove toolbar
+    set guioptions-=r               " Remove right-hand scroll bar
 endif
 
 " Redraw screen
