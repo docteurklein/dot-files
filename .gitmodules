@@ -10,9 +10,6 @@
 [submodule "bundle/phpfolding"]
 	path = bundle/phpfolding
 	url = git://github.com/vim-scripts/phpfolding.vim.git
-[submodule "bundle/colorsupport"]
-	path = bundle/colorsupport
-	url = git://github.com/vim-scripts/colorsupport.vim.git
 [submodule "ack.vim"]
 	path = bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
