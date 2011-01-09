@@ -13,7 +13,7 @@ set directory=~/.vim/tmp        " Directory to put swap file
 "
 
 set t_Co=256
-colorscheme desert
+colorscheme jellybeans
 
 if has('gui_running')
     set guifont=Monaco\ 12
