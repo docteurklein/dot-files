@@ -158,6 +158,7 @@ let g:LustyJugglerShowKeys = 0
 "
 
 let g:CommandTMaxFiles=30000        " Increase cache size
+map <leader>t :CommandT<cr>
 
 "
 " Ack
