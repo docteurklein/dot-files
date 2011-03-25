@@ -8,6 +8,11 @@ set history=1000                " Increase history
 set nobackup                    " Do not backup files on overwrite
 set directory=~/.vim/tmp        " Directory to put swap file
 
+"confirm quit
+"You will have to type: :qq<CR>
+"or ZZ
+noremap :q :confirm 
+
 "
 " Coloration
 "
@@ -137,7 +142,7 @@ map ]t :tnext<CR>
 " Jump to previous tag match
 map [t :tprevious<CR>
 " Open tag command
-map <C-T> :tag 
+map <C-T> :tag
 let g:Tlist_Ctags_Cmd = 'ctags'
 " Rebuild tag index
 nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
@@ -171,4 +176,5 @@ nmap <leader>a :Ack
 " Snipmate
 "
 
-let g:snips_author = 'Antoine Hérault <antoine.herault@gmail.com>'
+"let g:snips_author = 'Antoine Hérault <antoine.herault@gmail.com>'
+let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
