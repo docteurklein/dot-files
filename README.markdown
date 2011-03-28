@@ -9,12 +9,12 @@ Installation
 
 Clone the repository:
 
-    $ clone git://github.com/Herzult/vim-config.git ~/.vim
+    $ clone git://github.com/docteurklein/dot-files.git  dot_files
+    $ ln -s dot_files .vim
 
 Create a symbolic link of the .vimrc file into your home directory:
 
     $ ln -s ~/.vim/.vimrc ~/.vimrc
 
-You are right!
+Done!
 
-[ornicar]: https://github.com/ornicar
