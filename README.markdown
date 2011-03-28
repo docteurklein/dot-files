@@ -10,7 +10,7 @@ Installation
 Clone the repository:
 
     $ clone git://github.com/docteurklein/dot-files.git  dot_files
-    $ ln -s dot_files .vim
+    $ ln -s dot_files/.vim .vim
 
 Create a symbolic link of the .vimrc file into your home directory:
 
