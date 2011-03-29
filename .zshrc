@@ -42,10 +42,7 @@ bindkey "^[[B" history-search-forward
 bindkey "^xe" edit-command-line
 bindkey "^x^e" edit-command-line
 
-export EDITOR="emacsclient -t"
-export BROWSER=links
-export TERM="rxvt-unicode-256color"
-export VISUAL="emacsclient -t"
+export EDITOR="vim"
 
 #Personnal alias
 
