@@ -7,6 +7,80 @@ let mapleader=","               " Use the comma as leader
 set history=1000                " Increase history
 set nobackup                    " Do not backup files on overwrite
 set directory=~/.vim/tmp        " Directory to put swap file
+set nospell
+
+set showcmd                       " Display incomplete commands.
+set showmode                      " Display the mode you're in.
+
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
+
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
+set showmatch                     " Show matching char (like {})
+
+set visualbell                    " No beeping.
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set noswapfile                    " Use an SCM instead of swap files
+
+set laststatus=2                   " Show the status line all the time
+
+" Tabs and indentation.
+set expandtab
+set autoindent
+set smartindent
+
+" Configure tabstyle...
+set tabstop=4
+set shiftwidth=4
+
+" But make it easy to switch it
+nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
+nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+
+
+" Highlight current line
+set cursorline
+
+" When editing a file, always jump to the last known cursor position.
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+
+" Remove trailing whitespaces and ^M chars
+autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+syntax enable
+
+" Syntastic
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_quiet_warnings=0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+set encoding=utf-8
+
+" Enable folding by indentation
+set foldmethod=indent
+set fillchars=fold:⋯
+" go to next fold and open it
+map zz zjzo
+" Disable folding by default
+set nofoldenable
+
+"undo
+set undolevels=1000             " use many levels of undo
+"set noundofile
+
+"activate mouse!
+set mouse=a
 
 "confirm quit
 "You will have to type: :qq<CR>
