@@ -1,6 +1,9 @@
+
 "
 " General behavior
 "
+
+set encoding=utf-8
 
 set nocompatible                " Use vim defaults
 let mapleader=","               " Use the comma as leader
@@ -28,16 +31,19 @@ set nowritebackup                 " And again.
 set noswapfile                    " Use an SCM instead of swap files
 
 set laststatus=2                   " Show the status line all the time
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
+set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
-" Tabs and indentation.
+"
+" Tabs & Indentation
+"
 set expandtab
 set autoindent
 set smartindent
-
-" Configure tabstyle...
 set tabstop=4
 set shiftwidth=4
-
 " But make it easy to switch it
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
@@ -61,11 +67,6 @@ syntax enable
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_quiet_warnings=0
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-set encoding=utf-8
 
 " Enable folding by indentation
 set foldmethod=indent
@@ -82,10 +83,16 @@ set undolevels=1000             " use many levels of undo
 "activate mouse!
 set mouse=a
 
-"confirm quit
-"You will have to type: :qq<CR>
-"or ZZ
-noremap :q :confirm 
+"unmap arrows
+"noremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
+
 
 "
 " Coloration
@@ -97,19 +104,6 @@ colorscheme jellybeans
 if has('gui_running')
     set guifont=Monaco\ 12
 endif
-
-"
-" Tabs & Indentation
-"
-
-set expandtab
-set autoindent
-set smartindent
-set tabstop=4
-set shiftwidth=4
-
-nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
-nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=2<cr>
 
 "
 " Interface
@@ -223,7 +217,7 @@ nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --ex
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
-nnoremap <silent> <F7> :TlistToggle<CR>
+nnoremap <silent> <C-F8> :TlistToggle<CR>
 
 "
 " Lusty
