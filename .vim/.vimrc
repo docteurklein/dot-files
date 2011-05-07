@@ -202,7 +202,7 @@ silent! call pathogen#runtime_append_all_bundles()
 "
 
 " Explore tags for the word under the cursor
-map <C-l> <C-]>
+map <C-l> :ts<CR>
 " Back to previous location after browsing tags
 map <C-h> <C-T>
 " Jump to next tag match
