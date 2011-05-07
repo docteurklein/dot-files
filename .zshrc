@@ -47,3 +47,4 @@ export EDITOR="vim"
 #Personnal alias
 
 alias ll='ls -Al --color=auto -F'
+alias ack-grep='ack'
