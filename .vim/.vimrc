@@ -8,8 +8,6 @@ set encoding=utf-8
 set nocompatible                " Use vim defaults
 let mapleader=","               " Use the comma as leader
 set history=1000                " Increase history
-set nobackup                    " Do not backup files on overwrite
-set directory=~/.vim/tmp        " Directory to put swap file
 set nospell
 
 set showcmd                       " Display incomplete commands.
@@ -29,6 +27,7 @@ set visualbell                    " No beeping.
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 set noswapfile                    " Use an SCM instead of swap files
+"set directory=~/.vim/tmp        " Directory to put swap file
 
 set laststatus=2                   " Show the status line all the time
 set statusline+=%#warningmsg#
@@ -202,7 +201,7 @@ silent! call pathogen#runtime_append_all_bundles()
 "
 
 " Explore tags for the word under the cursor
-map <C-l> :ts<CR>
+map <C-l> g]
 " Back to previous location after browsing tags
 map <C-h> <C-T>
 " Jump to next tag match
@@ -237,7 +236,7 @@ map <leader>t :CommandT<cr>
 " Ack
 "
 
-let g:ackprg = 'ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
+let g:ackprg = 'ack -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
 nmap <leader>a :Ack
 
 "
