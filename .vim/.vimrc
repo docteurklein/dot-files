@@ -4,6 +4,7 @@
 "
 
 set encoding=utf-8
+set fileencoding=utf-8
 
 set nocompatible                " Use vim defaults
 let mapleader=","               " Use the comma as leader
@@ -30,10 +31,10 @@ set noswapfile                    " Use an SCM instead of swap files
 "set directory=~/.vim/tmp        " Directory to put swap file
 
 set laststatus=2                   " Show the status line all the time
-set statusline+=%#warningmsg#
+set statusline=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%{fugitive#statusline()}
-set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 "
 " Tabs & Indentation
@@ -69,7 +70,7 @@ let g:syntastic_quiet_warnings=0
 
 " Enable folding by indentation
 set foldmethod=indent
-set fillchars=fold:⋯
+"set fillchars=fold:⋯
 " go to next fold and open it
 map zz zjzo
 " Disable folding by default
@@ -201,6 +202,8 @@ silent! call pathogen#runtime_append_all_bundles()
 "
 
 " Explore tags for the word under the cursor
+"map <C-l> <C-]>
+" Explore tags list for the word under the cursor
 map <C-l> g]
 " Back to previous location after browsing tags
 map <C-h> <C-T>
@@ -236,8 +239,10 @@ map <leader>t :CommandT<cr>
 " Ack
 "
 
-let g:ackprg = 'ack -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
-nmap <leader>a :Ack
+let g:ackprg = 'ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
+
+" do a Ack search on the word under cursor
+nmap <leader>a :Ack <C-r><C-w><CR>
 
 "
 " Snipmate
