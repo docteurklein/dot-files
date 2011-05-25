@@ -1,0 +1,34 @@
+[user]
+	name = docteurklein
+	email = florian.klein@free.fr
+[core]
+    autocrlf = false
+    ui = true
+    editor = vim
+    whitespace = trailing-space,space-before-tab
+    mergetool = meld
+	excludesfile = /home/florian/.gitignore
+[color]
+    ui = always
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+[apply]
+    whitespace = fix
+[alias]
+    up  = pull origin
+    st  = status
+    df  = diff
+    co  = checkout
+    cm  = commit
+
