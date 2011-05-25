@@ -27,6 +27,7 @@
     whitespace = fix
 [alias]
     up  = pull origin
+    sup  = submodule foreach git checkout master && git pull origin master
     st  = status
     df  = diff
     co  = checkout
