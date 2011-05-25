@@ -1,0 +1,1 @@
+../bundle/vim-php-namespace/runtime/plugin/phpns.vim
