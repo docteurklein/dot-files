@@ -1,0 +1,58 @@
+# Interface following psr0 standard
+snippet ipsr
+    <?php
+
+    namespace ${1:`substitute(substitute(expand("%:h"), '^\/\U\+', '', ''), '\/', '\\\', 'g')`};
+
+    /**
+     * ${3:Interface documentation}
+     *
+     * @author     `g:snips_author`
+     */
+    interface ${2:`Filename('', 'myClass')`}
+    {
+        ${4}
+    }
+
+# Class following psr0 standard
+snippet cpsr
+    <?php
+
+    namespace ${3:`substitute(substitute(expand("%:h"), '^\/\U\+', '', ''), '\/', '\\\', 'g')`};
+
+    /**
+     * ${4:Class documentation}
+     *
+     * @author     `g:snips_author`
+     */
+    class ${2:`Filename('', 'myClass')`}
+    {
+        ${1}
+    }
+
+# setter/getter
+snippet sg
+    /**
+     * ${3:Variable comment}
+     *
+     * @var ${4:string}
+     */
+    ${1:protected} $${2:};
+
+    ${6}
+    /**
+     * @return $4
+     */
+    public function get${5:}()
+    {
+        return $this->$2;
+    }
+
+    /**
+     * @param  $4
+     * @return null
+     */
+    public function set$5($$2)
+    {
+        $this->$2 = $$2;
+    }
