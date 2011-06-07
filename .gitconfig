@@ -7,7 +7,7 @@
     editor = vim
     whitespace = trailing-space,space-before-tab
     mergetool = meld
-	excludesfile = /home/florian/.gitignore
+    excludesfile = /home/florian/.gitignore
 [color]
     ui = always
 [color "branch"]
