@@ -20,7 +20,7 @@ setopt pushdignoredups
 setopt nohup
 setopt extendedglob
 setopt completeinword
-setopt emacs
+setopt vi
 setopt promptsubst
 setopt globdots
 setopt histreduceblanks
