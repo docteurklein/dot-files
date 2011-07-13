@@ -44,6 +44,10 @@ bindkey "^x^e" edit-command-line
 
 export EDITOR="vim"
 
+for file in $HOME/.zsh/rc/*.rc; do
+        source $file
+done
+
 #Personnal alias
 
 alias ll='ls -Al --color=auto -F'
