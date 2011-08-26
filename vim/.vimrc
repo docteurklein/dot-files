@@ -164,6 +164,9 @@ nnoremap <C-y> 3<C-y>
 nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 
+"command mode
+imap jk 
+
 "
 " Chars
 "
@@ -216,6 +219,7 @@ map <C-T> :tag
 let g:Tlist_Ctags_Cmd = 'ctags'
 " Rebuild tag index
 nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
+cmap maketags :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
