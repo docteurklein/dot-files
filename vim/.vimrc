@@ -247,6 +247,8 @@ let g:ackprg = 'ack-grep -H --nocolor --nogroup --column --type-add html=twig --
 
 " do a Ack search on the word under cursor
 nmap <leader>a :Ack <C-r><C-w><CR>
+" do a Ack search on the selected text
+vmap <leader>a y:Ack <C-r>"<CR>
 
 
 "
