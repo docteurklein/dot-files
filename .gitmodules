@@ -49,3 +49,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/pdv"]
+	path = vim/bundle/pdv
+	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
