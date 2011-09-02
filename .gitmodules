@@ -52,3 +52,9 @@
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
 	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "vim/bundle/autoclose"]
+	path = vim/bundle/autoclose
+	url = https://github.com/vim-scripts/AutoClose.git
+[submodule "vim/bundle/ragtag"]
+	path = vim/bundle/ragtag
+	url = https://github.com/tpope/vim-ragtag.git
