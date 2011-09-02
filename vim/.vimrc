@@ -36,6 +36,12 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%{fugitive#statusline()}
 set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
+" Change statusbar color
+au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214 guifg=Orange guibg=Black
+au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16  guifg=Orange guibg=Black
+au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233 guifg=Red guibg=Black
+au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233 guifg=Grey guibg=Black
+
 "
 " Tabs & Indentation
 "
@@ -145,6 +151,7 @@ au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
 
 set wildmenu                        " Better completion
 set wildmode=list:longest           " BASH style completion
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
 
 "
 " Navigation & Viewport
@@ -217,9 +224,6 @@ map [t :tprevious<CR>
 " Open tag command
 map <C-T> :tag
 let g:Tlist_Ctags_Cmd = 'ctags'
-" Rebuild tag index
-nnoremap <silent> <C-F7> :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
-cmap maketags :silent !ctags -h ".php" --PHP-kinds=+cf --recurse --exclude="*/cache/*" --exclude="*/logs/*" --exclude="*/data/*" --exclude="\.git" --exclude="\.svn" --languages=PHP &<cr>:CommandTFlush<cr>
 " TagList
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
@@ -246,9 +250,9 @@ map <leader>t :CommandT<cr>
 let g:ackprg = 'ack-grep -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
 
 " do a Ack search on the word under cursor
-nmap <leader>a :Ack <C-r><C-w><CR>
+nmap <leader>f :Ack <C-r><C-w><CR>
 " do a Ack search on the selected text
-vmap <leader>a y:Ack <C-r>"<CR>
+vmap <leader>f y:Ack <C-r>"<CR>
 
 
 "
