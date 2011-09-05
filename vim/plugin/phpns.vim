@@ -1,1 +1,1 @@
-../bundle/vim-php-namespace/runtime/plugin/phpns.vim
+../bundle/vim-php-namespace/plugin/phpns.vim

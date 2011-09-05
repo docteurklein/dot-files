@@ -2,11 +2,36 @@
 "
 " General behavior
 "
+set nocompatible                " Use vim defaults
+filetype off                    " deactivate filetype for pathogen to load snipmate correctly
+
+" Tabs & Indentation
+"
+set expandtab
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+" But make it easy to switch it
+nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
+nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"
+"      PLUGINS CONFIGURATION
+"
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+" Load bundles help & code
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+filetype plugin indent on               " reactivate filetype as before
 
 set encoding=utf-8
 set fileencoding=utf-8
 
-set nocompatible                " Use vim defaults
 let mapleader=","               " Use the comma as leader
 set history=1000                " Increase history
 set nospell
@@ -41,18 +66,6 @@ au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214 guifg=Orange guibg=Black
 au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16  guifg=Orange guibg=Black
 au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233 guifg=Red guibg=Black
 au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233 guifg=Grey guibg=Black
-
-"
-" Tabs & Indentation
-"
-set expandtab
-set autoindent
-set smartindent
-set tabstop=4
-set shiftwidth=4
-" But make it easy to switch it
-nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
-nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
 
 
 " Highlight current line
@@ -195,17 +208,6 @@ au BufNewFile,BufRead *.twig setf htmljinja
 " Automatically remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
-
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"
-"      PLUGINS CONFIGURATION
-"
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-" Load bundles help & code
-silent! call pathogen#helptabs()
-silent! call pathogen#runtime_append_all_bundles()
 
 "
 " Ctags
