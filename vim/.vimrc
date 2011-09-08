@@ -213,20 +213,21 @@ autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :ca
 " Ctags
 "
 
+set tags=.git/tags
+
 " Explore tags for the word under the cursor
 "map <C-l> <C-]>
-" Explore tags list for the word under the cursor
-map <C-l> g]
+" Explore tags list for the word under the cursor OR go directly to it if only one result
+map <C-l> g<C-]>
 " Back to previous location after browsing tags
 map <C-h> <C-T>
 " Jump to next tag match
 map ]t :tnext<CR>
 " Jump to previous tag match
 map [t :tprevious<CR>
-" Open tag command
-map <C-T> :tag
-let g:Tlist_Ctags_Cmd = 'ctags'
+
 " TagList
+let g:Tlist_Ctags_Cmd = 'ctags'
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
 nnoremap <silent> <C-F8> :TlistToggle<CR>
@@ -255,6 +256,17 @@ let g:ackprg = 'ack-grep -H --nocolor --nogroup --column --type-add html=twig --
 nmap <leader>f :Ack <C-r><C-w><CR>
 " do a Ack search on the selected text
 vmap <leader>f y:Ack <C-r>"<CR>
+
+
+" Processing results in quickfix http://efiquest.org/2009-02-19/32/
+com! -nargs=1 Qfdo try | sil cfirst |
+\ while 1 | exec <q-args> | sil cn | endwhile |
+\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
+\ endtry
+com! -nargs=1 Qfdofile try | sil cfirst |
+\ while 1 | exec <q-args> | sil cnf | endwhile |
+\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
+\ endtry
 
 
 "
