@@ -252,6 +252,15 @@ let g:LustyJugglerShowKeys = 0
 
 let g:CommandTMaxFiles=30000        " Increase cache size
 map <leader>t :CommandT<cr>
+au BufCreate,BufFilePost * CommandTFlush
+
+au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
+
+function <SID>MkdirsIfNotExists(directory)
+    if(!isdirectory(a:directory))
+        call system('mkdir -p '.shellescape(a:directory))
+    endif
+endfunction
 
 "
 " Ack
