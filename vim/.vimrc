@@ -8,13 +8,20 @@ filetype off                    " deactivate filetype for pathogen to load snipm
 " Tabs & Indentation
 "
 set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set list
+set listchars=eol:¤,trail:-,tab:>-
+if has('gui_running')
+    set listchars=eol:⳾,tab:▸\ ,trail:⳽
+endif
+
 " But make it easy to switch it
-nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>
-nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>
+nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>:set softtabstop=2<cr>
+nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
