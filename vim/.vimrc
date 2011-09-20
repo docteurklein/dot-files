@@ -1,9 +1,11 @@
 
+" auto reload the config file after modifications
+" au BufWrite $MYVIMRC source $MYVIMRC
+
 "
 " General behavior
 "
 set nocompatible                " Use vim defaults
-filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 
 " Tabs & Indentation
 "
@@ -30,6 +32,7 @@ nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 " Load bundles help & code
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -256,7 +259,7 @@ au BufCreate,BufFilePost * CommandTFlush
 
 au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 
-function <SID>MkdirsIfNotExists(directory)
+function! <SID>MkdirsIfNotExists(directory)
     if(!isdirectory(a:directory))
         call system('mkdir -p '.shellescape(a:directory))
     endif
@@ -291,3 +294,4 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 
 "let g:snips_author = 'Antoine Hérault <antoine.herault@gmail.com>'
 let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
+
