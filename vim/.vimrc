@@ -6,6 +6,7 @@
 " General behavior
 "
 set nocompatible                " Use vim defaults
+filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 
 " Tabs & Indentation
 "
@@ -32,7 +33,6 @@ nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 " Load bundles help & code
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -174,7 +174,7 @@ au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
 
 set wildmenu                        " Better completion
 set wildmode=list:longest           " BASH style completion
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/bootstrap.*,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
 
 "
 " Navigation & Viewport
@@ -211,9 +211,6 @@ syntax enable                       " Enable syntax highlighting
 filetype on
 filetype plugin on
 filetype indent on
-
-" Use the htmljinja syntax for twig files
-au BufNewFile,BufRead *.twig setf htmljinja
 
 " Automatically remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
@@ -287,6 +284,11 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
 \ endtry
 
+" Use the htmljinja syntax for twig files
+au BufNewFile,BufRead *.twig setf htmljinja
+
+" do not auto insert comment chars on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "
 " Snipmate
