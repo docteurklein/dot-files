@@ -292,8 +292,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "
 " Snipmate
-"
-
-"let g:snips_author = 'Antoine Hérault <antoine.herault@gmail.com>'
 let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
+
+" phpunit compilation
+com! -nargs=* Phpunit make -c app <q-args> | cw
 

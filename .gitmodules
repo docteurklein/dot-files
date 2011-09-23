@@ -61,3 +61,9 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip.git
+[submodule "vim/bundle/php-getter-setter"]
+	path = vim/bundle/php-getter-setter
+	url = git@github.com:docteurklein/php-getter-setter.vim.git
+[submodule "vim/bundle/phpunit"]
+	path = vim/bundle/phpunit
+	url = git@github.com:docteurklein/vim-phpunit.git
