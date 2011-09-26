@@ -66,16 +66,19 @@ set noswapfile                    " Use an SCM instead of swap files
 "set directory=~/.vim/tmp        " Directory to put swap file
 
 set laststatus=2                   " Show the status line all the time
-set statusline=%#warningmsg#
+set statusline=
+"set statusline=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%{fugitive#statusline()}
 set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
-" Change statusbar color
-au InsertEnter * hi StatusLine ctermfg=16 ctermbg=214 guifg=Orange guibg=Black
-au InsertEnter * hi LineNr     ctermfg=214 ctermbg=16  guifg=Orange guibg=Black
-au InsertLeave * hi StatusLine ctermfg=242 ctermbg=233 guifg=Red guibg=Black
-au InsertLeave * hi LineNr     ctermfg=238 ctermbg=233 guifg=Grey guibg=Black
+" Change line numbers color
+au InsertEnter * hi LineNr      ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
+au InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605958 guibg=#151515
+
+" Change statusline color
+au InsertEnter * hi StatusLine  ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
+au InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=italic guifg=#000000 guibg=#dddddd
 
 
 " Highlight current line
@@ -164,10 +167,6 @@ if &term =~ "xterm"
     let &t_EI = "\<Esc>]12;white\x7"
 endif
 
-" Change statusbar color depending on the mode
-au InsertEnter * hi StatusLine ctermfg=226 ctermbg=16
-au InsertLeave * hi StatusLine ctermfg=7 ctermfg=0
-
 "
 " Command line
 "
@@ -196,6 +195,10 @@ nnoremap <C-k> 3k
 
 "command mode
 imap jk 
+
+" paste "0, ie: before-last yanked register
+nnoremap <leader>p "0p
+vnoremap <leader>p "0p
 
 "
 " Chars
