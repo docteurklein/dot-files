@@ -275,6 +275,8 @@ let g:ackprg = 'ack-grep -H --nocolor --nogroup --column --type-add html=twig --
 nmap <leader>f :Ack <C-r><C-w><CR>
 " do a Ack search on the selected text
 vmap <leader>f y:Ack <C-r>"<CR>
+" search on php.net for current word
+command Browse : ! $BROWSER php.net/<cword>
 
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
@@ -293,10 +295,9 @@ au BufNewFile,BufRead *.twig setf htmljinja
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"
-" Snipmate
-let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
-
 " phpunit compilation
 com! -nargs=* Phpunit make -c app <q-args> | cw
 
+"
+" Snipmate
+let g:snips_author = 'Florian Klein <florian.klein@free.fr>'

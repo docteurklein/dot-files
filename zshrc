@@ -1,3 +1,5 @@
+export BROWSER=chromium-browser
+
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
