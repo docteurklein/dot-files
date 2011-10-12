@@ -200,10 +200,12 @@ imap jk 
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p
 
+
+cabbrev bda bufdo bd<cr>
+
 "
 " Chars
 "
-
 set encoding=utf-8
 
 "
@@ -245,7 +247,6 @@ nnoremap <silent> <C-F8> :TlistToggle<CR>
 "
 " Lusty
 "
-
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 0
 
@@ -276,7 +277,7 @@ nmap <leader>f :Ack <C-r><C-w><CR>
 " do a Ack search on the selected text
 vmap <leader>f y:Ack <C-r>"<CR>
 " search on php.net for current word
-command Browse : ! $BROWSER php.net/<cword>
+command! Browse : ! $BROWSER php.net/<cword>
 
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
