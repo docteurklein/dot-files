@@ -103,8 +103,6 @@ let g:syntastic_quiet_warnings=0
 " Enable folding by indentation
 set foldmethod=indent
 "set fillchars=fold:⋯
-" go to next fold and open it
-map zz zjzo
 " Disable folding by default
 set nofoldenable
 
