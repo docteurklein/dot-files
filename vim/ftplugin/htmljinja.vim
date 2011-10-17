@@ -1,6 +1,3 @@
-map <buffer> ns :call PhpInsertUse()<CR>
-
-nnoremap <C-P> :call PhpDocSingle()<CR>
 
 fun! CompleteSymfonyRouter(findstart, base)
     if a:findstart
