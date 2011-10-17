@@ -2,7 +2,7 @@ map <buffer> ns :call PhpInsertUse()<CR>
 
 nnoremap <C-P> :call PhpDocSingle()<CR>
 
-fun! CompleteSymfonyContainer(findstart, base)
+fun! CompleteSymfonyRouter(findstart, base)
     if a:findstart
         " locate the start of the word
         let line = getline('.')
@@ -14,7 +14,7 @@ fun! CompleteSymfonyContainer(findstart, base)
     else
         " find symfony services id matching with "a:base"
         let res = []
-        let shellcmd = 'php app/console container:debug'
+        let shellcmd = 'php app/console router:debug'
         let output = system(shellcmd)
         if v:shell_error
             return 0
@@ -23,9 +23,9 @@ fun! CompleteSymfonyContainer(findstart, base)
         for m in split(output, "\n")
             let row = split(m)
             if len(row) == 3
-                let [service, context, class] = row
-                if service =~ '^' . a:base
-                    call add(res, service)
+                let [route, lontext, url] = row
+                if route =~ '^' . a:base
+                    call add(res, route)
                 endif
             endif
         endfor
@@ -33,4 +33,4 @@ fun! CompleteSymfonyContainer(findstart, base)
     endif
 endfun
 
-set completefunc=CompleteSymfonyContainer
+set completefunc=CompleteSymfonyRouter
