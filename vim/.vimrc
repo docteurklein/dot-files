@@ -248,6 +248,10 @@ nnoremap <silent> <C-F8> :TlistToggle<CR>
 map <leader>lp :LustyJugglePrevious<cr>
 let g:LustyJugglerShowKeys = 0
 
+map <C-Tab> <C-W><C-W>
+map <S-Right> :bnext<CR>
+map <S-Left> :bprevious<CR>
+
 "
 " Command-T
 "
