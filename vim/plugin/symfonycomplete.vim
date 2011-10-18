@@ -9,9 +9,10 @@ fun! CompleteSymfonyContainer(base, res)
     for m in split(output, "\n")
         let row = split(m)
         if len(row) == 3
-            let [service, context, class] = row
+            let [service, scope, class] = row
             if service =~ '^' . a:base
-                call add(a:res, service)
+                let menu = 'scope: '. scope .', class: '. class
+                call add(a:res, { 'word': service, 'menu': menu })
             endif
         endif
     endfor
@@ -29,9 +30,10 @@ fun! CompleteSymfonyRouter(base, res)
     for m in split(output, "\n")
         let row = split(m)
         if len(row) == 3
-            let [route, lontext, url] = row
+            let [route, method, url] = row
             if route =~ '^' . a:base
-                call add(a:res, route)
+                let menu = 'method: '. method .', url: '. url
+                call add(a:res, { 'word': route, 'menu': menu })
             endif
         endif
     endfor
@@ -42,7 +44,7 @@ fun! CompleteSymfony(findstart, base)
         " locate the start of the word
         let line = getline('.')
         let start = col('.') - 1
-        while start > 0 && line[start - 1] =~ '\S'
+        while start > 0 && line[start - 1] =~ '[a-zA-Z_\-.]'
             let start -= 1
         endwhile
         return start
