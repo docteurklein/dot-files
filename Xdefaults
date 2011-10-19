@@ -42,7 +42,7 @@ URxvt.color14 : #55FFFF
 ! white
 URxvt.color7  : #AAAAAA
 
-URxvt*font: xft:inconsolata:pixelsize=14
+URxvt*font: xft:Monaco:pixelsize=14
 !URxvt*boldFont: xft:Arial:pixelsize=13
 
 URxvt.perl-ext-common : default,matcher
