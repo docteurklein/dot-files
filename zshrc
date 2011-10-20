@@ -1,3 +1,4 @@
+export PATH="$PATH:/usr/bin/vendor_perl"
 export BROWSER=chromium-browser
 
 export HISTFILE=~/.zsh_history
