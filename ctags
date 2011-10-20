@@ -1,3 +1,4 @@
+--extra=+f
 --languages=PHP,JavaScript
 --totals=yes
 --tag-relative=yes
@@ -23,3 +24,6 @@
 
 --PHP-kinds=cidf 
 --fields=+ain 
+
+--langdef=file
+--langmap=file:.html.twig.xml.yml
