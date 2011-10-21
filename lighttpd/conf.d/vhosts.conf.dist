@@ -1,0 +1,6 @@
+$HTTP["host"] == "host.dev" {
+    server.name = "host.dev" 
+    server.document-root = "~/host""
+    include "conf.d/php5.3.fcgi.conf"
+    #include "conf.d/php5.4.fcgi.conf"
+}
