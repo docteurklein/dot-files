@@ -19,3 +19,6 @@ ln -s dot-files/toprc         ../.toprc
 
 ln -s dot-files/zsh           ../.zsh
 ln -s dot-files/zshrc         ../.zshrc
+
+sudo ln -s dot-files/lighttpd/conf.d           /etc/lighttpd/conf.d
+sudo ln -s dot-files/lighttpd/lighttpd.conf    /etc/lighttpd/lighttpd.conf
