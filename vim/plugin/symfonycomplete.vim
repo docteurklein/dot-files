@@ -19,8 +19,6 @@ fun! CompleteSymfonyContainer(base, res)
 endfun
 
 fun! CompleteSymfonyRouter(base, res)
-    " find symfony routes matching with "a:base"
-    let res = []
     let shellcmd = 'php app/console router:debug'
     let output = system(shellcmd)
     if v:shell_error
