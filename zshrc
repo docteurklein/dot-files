@@ -45,6 +45,16 @@ bindkey "^[[B" history-search-forward
 bindkey "^xe" edit-command-line
 bindkey "^x^e" edit-command-line
 
+bindkey '^?' backward-delete-char
+bindkey '^[[7~' beginning-of-line
+bindkey '^[[8~' end-of-line
+bindkey "^P" vi-up-line-or-history
+bindkey "^N" vi-down-line-or-history
+bindkey "^[[1~" vi-beginning-of-line   # Home
+bindkey "^[[4~" vi-end-of-line         # End
+bindkey '^[[5~' vi-backward-blank-word # Page Up
+bindkey '^[[6~' vi-forward-blank-word  # Page Down
+
 export EDITOR="vim"
 
 for file in $HOME/.zsh/rc/*.rc; do
