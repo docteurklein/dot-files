@@ -8,6 +8,13 @@
 set nocompatible                " Use vim defaults
 filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 
+
+"
+" Coloration
+"
+set t_Co=256
+colorscheme jellybeans
+
 " Tabs & Indentation
 "
 set expandtab
@@ -80,6 +87,8 @@ au InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605
 au InsertEnter * hi StatusLine  ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
 au InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=italic guifg=#000000 guibg=#dddddd
 
+au BufEnter    * hi SpellCap    guisp=Orange
+
 
 " Highlight current line
 set cursorline
@@ -98,7 +107,7 @@ syntax enable
 " Syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_warnings = 0
 
 " Enable folding by indentation
 set foldmethod=indent
@@ -123,13 +132,6 @@ set mouse=a
 "noremap   <Left>   <NOP>
 "noremap   <Right>  <NOP>
 
-
-"
-" Coloration
-"
-
-set t_Co=256
-colorscheme jellybeans
 
 if has('gui_running')
     set guifont=Monaco\ 12
