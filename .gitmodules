@@ -61,3 +61,6 @@
 [submodule "vim/bundle/phpunit"]
 	path = vim/bundle/phpunit
 	url = git@github.com:docteurklein/vim-phpunit.git
+[submodule "vim/bundle/vim-symfony"]
+	path = vim/bundle/vim-symfony
+	url = git@github.com:docteurklein/vim-symfony.git
