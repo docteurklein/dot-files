@@ -1,6 +1,6 @@
 <?php
 
-namespace ${3:`substitute(substitute(expand("%:h"), '^\/\U\+', '', ''), '\/', '\\\', 'g')`};
+namespace ${3:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
 /**
  * ${4:Class documentation}

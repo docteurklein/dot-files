@@ -88,6 +88,7 @@ au InsertEnter * hi StatusLine  ctermfg=16 ctermbg=214 guifg=Orange guibg=#15151
 au InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=italic guifg=#000000 guibg=#dddddd
 
 au BufEnter    * hi SpellCap    guisp=Orange
+au BufEnter    * hi Comment     gui=NONE
 
 
 " Highlight current line
@@ -108,6 +109,7 @@ syntax enable
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_quiet_warnings = 0
+let g:syntastic_enable_balloons = 1
 
 " Enable folding by indentation
 set foldmethod=indent
