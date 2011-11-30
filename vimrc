@@ -274,8 +274,6 @@ endfunction
 
 "
 " Ack
-"
-
 let g:ackprg = 'ack -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
 
 " do a Ack search on the word under cursor
