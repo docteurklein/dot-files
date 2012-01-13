@@ -8,7 +8,6 @@
 set nocompatible                " Use vim defaults
 filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 
-
 "
 " Coloration
 "
@@ -26,12 +25,14 @@ set smartindent
 set list
 set listchars=eol:¤,trail:-,tab:>-
 if has('gui_running')
-    set listchars=eol:⳾,tab:▸\ ,trail:⳽
+    set listchars=eol:¤,tab:▸\ ,trail:¤
 endif
 
 " But make it easy to switch it
 nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>:set softtabstop=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
+
+let g:feature_filetype = "behat"
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
@@ -90,6 +91,8 @@ au InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=ita
 au BufEnter    * hi SpellCap    guisp=Orange
 au BufEnter    * hi Comment     gui=NONE
 
+au BufReadPost fugitive://* set bufhidden=delete
+
 
 " Highlight current line
 set cursorline
@@ -134,6 +137,8 @@ set mouse=a
 "noremap   <Left>   <NOP>
 "noremap   <Right>  <NOP>
 
+
+let g:Powerline_symbols = 'fancy'
 
 if has('gui_running')
     set guifont=Monaco\ 12
@@ -198,6 +203,12 @@ nnoremap <C-k> 3k
 "command mode
 imap jk 
 
+" querty like
+imap '' {
+imap == }
+imap (( [
+imap )) ]
+
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p
@@ -260,9 +271,16 @@ map <S-Left> :bprevious<CR>
 " Command-T
 "
 
-let g:CommandTMaxFiles=30000        " Increase cache size
-map <leader>t :CommandT<cr>
-au BufCreate,BufFilePost * CommandTFlush
+"let g:CommandTMaxFiles=30000        " Increase cache size
+"map <leader>t :CommandT<cr>
+"au BufCreate,BufFilePost * CommandTFlush
+
+"
+" CtrlP
+"
+"let g:ctrlp_map = '<leader>t'
+"nmap <leader>b :CtrlPBuffer<cr>
+
 
 au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 
