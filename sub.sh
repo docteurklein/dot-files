@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for cfg in `git config -f .gitmodules -l`
+for cfg in `git config -f .gitmodules.old -l`
 do
     url=`echo $cfg | awk -F"submodule.*.url=" '{print $2}'`;
 
