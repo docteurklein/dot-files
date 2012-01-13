@@ -32,7 +32,6 @@
     df  = diff
     co  = checkout
     cm  = commit
-	ctags = !.git/hooks/ctags
-
+    ctags = !.git/hooks/ctags
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
