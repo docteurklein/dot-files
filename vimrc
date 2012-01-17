@@ -73,6 +73,10 @@ set nowritebackup                 " And again.
 set noswapfile                    " Use an SCM instead of swap files
 "set directory=~/.vim/tmp        " Directory to put swap file
 
+"
+" omnicompletion
+set completeopt=menuone
+
 set laststatus=2                   " Show the status line all the time
 set statusline=
 "set statusline=%#warningmsg#
