@@ -23,9 +23,9 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set list
-set listchars=eol:¤,trail:-,tab:>-
+set listchars=eol:↩,trail:‧,tab:>⁙
 if has('gui_running')
-    set listchars=eol:¤,tab:▸\ ,trail:¤
+    set listchars=eol:↩,trail:‧,tab:>⁙
 endif
 
 " But make it easy to switch it
