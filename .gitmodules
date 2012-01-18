@@ -79,3 +79,6 @@
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/yankring"]
+	path = vim/bundle/yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
