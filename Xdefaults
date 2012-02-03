@@ -16,6 +16,8 @@ Xft.hinting               : true
 Xft.rgba                  : rgb
 Xft.hintstyle             : hintfull
 
+URxvt.colorIT             : green
+
 ! black
 URxvt.color0              : #000000
 URxvt.color8              : #555555
@@ -68,7 +70,7 @@ URxvt.matcher.button      : 2
 *URxvt*keysym.C-Page_Up   : \033[5;5~
 *URxvt*keysym.C-Page_Down : \033[6;5~
 
-!*URxvt*keysym.C-Up       :              \033[1;5A
-!*URxvt*keysym.C-Down     :            \033[1;5B
-!*URxvt*keysym.C-Right    :           \033[1;5C
-!*URxvt*keysym.C-Left     :            \033[1;5D
+*URxvt*keysym.C-Up    : \033[1;5A
+*URxvt*keysym.C-Down  : \033[1;5B
+*URxvt*keysym.C-Right : \033[1;5C
+*URxvt*keysym.C-Left  : \033[1;5D
