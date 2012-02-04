@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /opt && \
-#hg clone https://vim.googlecode.com/hg/ vim && \
+git clone https://github.com/b4winckler/vim.git
 cd vim/src && \
 ./configure \
     --enable-multibyte    \

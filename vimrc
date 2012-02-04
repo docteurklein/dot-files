@@ -205,6 +205,14 @@ nnoremap <C-y> 3<C-y>
 nnoremap <C-j> 3j
 nnoremap <C-k> 3k
 
+" Faster window resizing
+" vertical
+nnoremap + 3<c-w>+
+nnoremap 6 3<c-w>-
+" horizontal
+nnoremap = 3<c-w>>
+nnoremap - 3<c-w><
+
 "command mode
 imap jk 
 
