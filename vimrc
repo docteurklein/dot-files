@@ -33,6 +33,7 @@ nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>:set softtabstop=2<cr>
 nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
 
 let g:feature_filetype = "behat"
+let g:syntastic_phpcs_disable = 1
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
@@ -61,7 +62,7 @@ set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 
 set ignorecase                    " Case-insensitive searching.
-set infercase                    " Case-sensitive completion.
+set infercase                     " Case-sensitive completion.
 set smartcase                     " But case-sensitive if expression contains a capital letter.
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
@@ -101,12 +102,6 @@ au BufReadPost fugitive://* set bufhidden=delete
 
 " Highlight current line
 set cursorline
-
-" When editing a file, always jump to the last known cursor position.
-autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
@@ -153,7 +148,6 @@ endif
 " Interface
 "
 
-set ls=2                            " Always show the status line
 set ruler                           " Show cursor position
 set number                          " Show line numbers
 set notitle                         " Don't show title in console title bar
@@ -214,13 +208,15 @@ nnoremap = 3<c-w>>
 nnoremap - 3<c-w><
 
 "command mode
-imap jk 
+inoremap jk <Esc>
+inoremap <S-CR> <Esc>
 
 " querty like
 imap '' {
 imap == }
 imap (( [
 imap )) ]
+imap /§ \
 
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
@@ -332,7 +328,7 @@ au BufNewFile,BufRead *.twig setf htmljinja
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " phpunit compilation
-com! -nargs=* Phpunit make -c app <q-args> | cw
+com! -nargs=* Phpunit make <q-args> | cw
 
 "
 " Snipmate
