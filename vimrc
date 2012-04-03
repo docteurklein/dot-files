@@ -136,6 +136,12 @@ set mouse=a
 "noremap   <Left>   <NOP>
 "noremap   <Right>  <NOP>
 
+" tmux specific mapping
+inoremap <Esc>[A <Up>
+inoremap <Esc>[B <Down>
+inoremap <Esc>[C <Left>
+inoremap <Esc>[D <Right>
+
 
 let g:Powerline_symbols = 'fancy'
 
