@@ -147,6 +147,8 @@ let g:Powerline_symbols = 'fancy'
 
 if has('gui_running')
     set guifont=Monaco\ 12
+else
+  let g:Powerline_symbols = 'unicode'
 endif
 
 "
