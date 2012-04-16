@@ -42,8 +42,11 @@ URxvt.color14             : #55FFFF
 ! white
 URxvt.color7              : #AAAAAA
 
-URxvt*font                : xft:Monaco:pixelsize=14
-!URxvt*boldFont           : xft:Arial:pixelsize=13
+URxvt*font:                 xft:Monaco for Powerline:regular:size=12
+URxvt*imFont:               xft:Monaco for Powerline:regular:size=12
+URxvt*boldFont:             xft:Monaco for Powerline:bold:size=12
+URxvt*italicFont:           xft:Monaco for Powerline:italic:size=12
+URxvt*boldItalicFont:       xft:Monaco for Powerline:bold:italic:size=12
 
 URxvt.perl-ext-common     : default,matcher
 URxvt.urlLauncher         : chromium
