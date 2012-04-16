@@ -1,3 +1,4 @@
+keymap  "x \n"  SUBMIT
 gb18030_as_ucs 0
 strict_iso2022 1
 use_jisx0213 0
