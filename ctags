@@ -22,8 +22,9 @@
 --regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
 --regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
 
---PHP-kinds=cidf 
+--PHP-kinds=cidf
 --fields=+ain 
+--fields=+l 
 
 --langdef=file
 --langmap=file:.html.twig.xml.yml
