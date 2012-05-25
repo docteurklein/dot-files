@@ -2,7 +2,7 @@
 " Language: PHP 5.3 & up
 " Maintainer: Paul Garvin <paul@paulgarvin.net>
 " Last Change:  April 2, 2010
-" URL: 
+" URL:
 "
 " Former Maintainer:  Peter Hodge <toomuchphp-vim@yahoo.com>
 " Former URL: http://www.vim.org/scripts/script.php?script_id=1571
@@ -71,7 +71,7 @@ endif
 syn sync clear
 
 syn case match
- 
+
 " Superblobals
 syn keyword phpSuperglobals GLOBALS _GET _POST _REQUEST _FILES _COOKIE _SERVER _SESSION _ENV HTTP_RAW_POST_DATA php_errormsg http_response_header argc argv contained
 
@@ -411,7 +411,7 @@ syntax keyword phpClasses containedin=ALLBUT,phpComment,phpStringDouble,phpStrin
 syn keyword phpStatement if else elseif while do for foreach break switch case default continue return goto as endif endwhile endfor endforeach endswitch declare endeclare contained
 
 " Class Keywords
-syn keyword phpType class abstract extends interface implements static final var public private protected const contained
+syn keyword phpType class trait abstract extends interface implements static final var public private protected const contained
 
 " Magic Methods
 syn keyword phpStatement __construct __destruct __call __callStatic __get __set __isset __unset __sleep __wakeup __toString __invoke __set_state __clone contained

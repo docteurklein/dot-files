@@ -65,3 +65,8 @@ done
 
 alias ll='ls -Al --color=auto -F'
 alias ack-grep='ack'
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
+alias gco='git checkout'
+

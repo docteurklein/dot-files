@@ -215,7 +215,7 @@ nnoremap = 3<c-w>>
 nnoremap - 3<c-w><
 
 "command mode
-inoremap jk <Esc>
+inoremap jj <Esc>
 inoremap <S-CR> <Esc>
 
 " querty like
@@ -253,7 +253,6 @@ autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :ca
 "
 " Ctags
 "
-
 set tags=.git/tags
 
 " Explore tags for the word under the cursor
@@ -296,6 +295,7 @@ map <S-Left> :bprevious<CR>
 "
 "let g:ctrlp_map = '<leader>t'
 "nmap <leader>b :CtrlPBuffer<cr>
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 
 au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
@@ -336,6 +336,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " phpunit compilation
 com! -nargs=* Phpunit make <q-args> | cw
+
+" dont use ":" as a keyword separator
+set iskeyword-=:
 
 "
 " Snipmate
