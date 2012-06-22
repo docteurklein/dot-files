@@ -98,7 +98,6 @@ au BufEnter    * hi Comment     gui=NONE
 
 au BufReadPost fugitive://* set bufhidden=delete
 
-
 " Highlight current line
 set cursorline
 
