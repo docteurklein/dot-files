@@ -1,4 +1,8 @@
 export PATH="$PATH:/usr/bin/vendor_perl"
+export PATH="$PATH:/home/florian/.gem/bin"
+export GEM_HOME=~/.gem
+export GEM_PATH=~/.gem
+
 export BROWSER=chromium-browser
 
 export HISTFILE=~/.zsh_history
