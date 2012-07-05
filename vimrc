@@ -252,7 +252,9 @@ autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :ca
 "
 " Ctags
 "
-set tags=.git/tags
+set tags=.tags
+let g:autotagTagsFile = '.tags'
+
 
 " Explore tags for the word under the cursor
 "map <C-l> <C-]>

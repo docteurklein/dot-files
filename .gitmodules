@@ -82,3 +82,6 @@
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
 	url = git://github.com/lunaru/vim-less.git
+[submodule "vim/bundle/autotag"]
+	path = vim/bundle/autotag
+	url = git://github.com/vim-scripts/AutoTag.git
