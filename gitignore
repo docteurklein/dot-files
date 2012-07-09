@@ -1,4 +1,7 @@
 .idea
-tags
+.tags
 Session.vim
 node_modules
+tags
+vendor.tags
+Guardfile

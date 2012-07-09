@@ -1,3 +1,5 @@
 vim/.netrwhist
 lighttpd/conf.d/vhosts.conf
-.tags
+tags
+vendor.tags
+Guardfile

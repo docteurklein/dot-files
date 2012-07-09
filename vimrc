@@ -252,8 +252,7 @@ autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :ca
 "
 " Ctags
 "
-set tags=.tags
-let g:autotagTagsFile = '.tags'
+set tags=tags,vendor.tags
 
 
 " Explore tags for the word under the cursor
