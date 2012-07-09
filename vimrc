@@ -1,6 +1,6 @@
 
 " auto reload the config file after modifications
-" au BufWrite $MYVIMRC source $MYVIMRC
+" autocmd BufWrite $MYVIMRC source $MYVIMRC
 
 "
 " General behavior
@@ -86,17 +86,17 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " Change line numbers color
-au InsertEnter * hi LineNr      ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
-au InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605958 guibg=#151515
+autocmd InsertEnter * hi LineNr      ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
+autocmd InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605958 guibg=#151515
 
 " Change statusline color
-au InsertEnter * hi StatusLine  ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
-au InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=italic guifg=#000000 guibg=#dddddd
+autocmd InsertEnter * hi StatusLine  ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
+autocmd InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=italic guifg=#000000 guibg=#dddddd
 
-au BufEnter    * hi SpellCap    guisp=Orange
-au BufEnter    * hi Comment     gui=NONE
+autocmd BufEnter    * hi SpellCap    guisp=Orange
+autocmd BufEnter    * hi Comment     gui=NONE
 
-au BufReadPost fugitive://* set bufhidden=delete
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Highlight current line
 set cursorline
@@ -197,7 +197,7 @@ set hidden                          " Allow switch beetween modified buffers
 set backspace=indent,eol,start      " Improve backspacing
 
 " Restore cursor position
-au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " Faster viewport scrolling
 nnoremap <C-e> 3<C-e>
@@ -288,7 +288,7 @@ map <S-Left> :bprevious<CR>
 
 "let g:CommandTMaxFiles=30000        " Increase cache size
 "map <leader>t :CommandT<cr>
-"au BufCreate,BufFilePost * CommandTFlush
+"autocmd BufCreate,BufFilePost * CommandTFlush
 
 "
 " CtrlP
@@ -298,7 +298,7 @@ map <S-Left> :bprevious<CR>
 let g:ctrlp_cmd = 'CtrlPMRU'
 
 
-au BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
+autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 
 function! <SID>MkdirsIfNotExists(directory)
     if(!isdirectory(a:directory))
@@ -327,9 +327,6 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 \ while 1 | exec <q-args> | sil cnf | endwhile |
 \ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
 \ endtry
-
-" Use the htmljinja syntax for twig files
-au BufNewFile,BufRead *.twig setf htmljinja
 
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

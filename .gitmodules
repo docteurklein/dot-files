@@ -85,3 +85,6 @@
 [submodule "vim/bundle/autotag"]
 	path = vim/bundle/autotag
 	url = git://github.com/vim-scripts/AutoTag.git
+[submodule "vim/bundle/twig"]
+	path = vim/bundle/twig
+	url = git://github.com/beyondwords/vim-twig.git
