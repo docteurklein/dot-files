@@ -59,6 +59,12 @@ bindkey "^[[4~" vi-end-of-line         # End
 bindkey '^[[5~' vi-backward-blank-word # Page Up
 bindkey '^[[6~' vi-forward-blank-word  # Page Down
 
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+
 export EDITOR="vim"
 
 for file in $HOME/.zsh/rc/*.rc; do
