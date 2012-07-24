@@ -42,10 +42,10 @@ let g:syntastic_phpcs_disable = 1
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-" Load bundles help & code
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
+syntax on
 
+filetype plugin indent on
 filetype plugin indent on               " reactivate filetype as before
 
 set encoding=utf-8
@@ -103,8 +103,6 @@ set cursorline
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
-
-syntax enable
 
 " Syntastic
 let g:syntastic_enable_signs = 1
@@ -240,7 +238,6 @@ set encoding=utf-8
 " Syntax & File types
 "
 
-syntax enable                       " Enable syntax highlighting
 filetype on
 filetype plugin on
 filetype indent on
@@ -286,6 +283,7 @@ map <S-Left> :bprevious<CR>
 " Command-T
 "
 
+let g:CommandTMatchWindowReverse = 1
 "let g:CommandTMaxFiles=30000        " Increase cache size
 "map <leader>t :CommandT<cr>
 "autocmd BufCreate,BufFilePost * CommandTFlush

@@ -1,4 +1,5 @@
 export PATH="$PATH:/usr/bin/vendor_perl"
+export PATH="$PATH:/home/florian/bin"
 export PATH="$PATH:/home/florian/.gem/bin"
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
@@ -60,7 +61,8 @@ bindkey '^[[5~' vi-backward-blank-word # Page Up
 bindkey '^[[6~' vi-forward-blank-word  # Page Down
 
 # TMUX
-if which tmux 2>&1 >/dev/null; then
+if [ -n $DISPLAY ]
+then
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
@@ -76,7 +78,11 @@ done
 alias ll='ls -Al --color=auto -F'
 alias ack-grep='ack'
 alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
 alias gc='git commit'
-alias gp='git push'
+alias gph='git push'
+alias gpl='git pull'
+alias gpr='git pull --rebase'
 alias gco='git checkout'
 
