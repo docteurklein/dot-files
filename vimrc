@@ -279,14 +279,6 @@ map <C-Tab> <C-W><C-W>
 map <S-Right> :bnext<CR>
 map <S-Left> :bprevious<CR>
 
-"
-" Command-T
-"
-
-let g:CommandTMatchWindowReverse = 1
-"let g:CommandTMaxFiles=30000        " Increase cache size
-"map <leader>t :CommandT<cr>
-"autocmd BufCreate,BufFilePost * CommandTFlush
 
 "
 " CtrlP
