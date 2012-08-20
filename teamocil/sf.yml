@@ -1,0 +1,34 @@
+session:
+    name: <%= File.basename(Dir.getwd) %>
+    windows:
+        - 
+            name: editor
+            root: <%= Dir.getwd %>
+            splits:
+                - { cmd: vim }
+        - 
+            name: shell
+            root: <%= Dir.getwd %>
+            filters:
+                before: clear
+            splits:
+                -
+                    cmd:
+                        - tmux select-window -t editor
+                    focus: true
+                -
+                    cmd:
+                        - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
+                        - tail -f app/logs/dev.log
+                    width: 50
+                -
+                    cmd:
+                        - 'if [ ! -f app/logs/test.log ]; then touch app/logs/test.log ; fi'
+                        - tail -f app/logs/test.log
+                    height: 55
+                -
+                    cmd:
+                        - 'if [ ! -f pear.tags ]; then ctags -R -f pear.tags /usr/share/pear ; fi'
+                        - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
+                        - guard
+                    height: 20
