@@ -4,4 +4,5 @@ Session.vim
 node_modules
 tags
 vendor.tags
+pear.tags
 Guardfile
