@@ -249,7 +249,7 @@ autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :ca
 "
 " Ctags
 "
-set tags=tags,vendor.tags
+set tags=tags,vendor.tags,pear.tags
 
 
 " Explore tags for the word under the cursor
@@ -301,9 +301,9 @@ endfunction
 let g:ackprg = 'ack -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
 
 " do a Ack search on the word under cursor
-nmap <leader>f :Ack <C-r><C-w><CR>
+nmap <leader>f :Ack "<C-r><C-w>"
 " do a Ack search on the selected text
-vmap <leader>f y:Ack <C-r>"<CR>
+vmap <leader>f y:Ack "<C-r>"
 " search on php.net for current word
 command! Browse : ! $BROWSER php.net/<cword>
 
