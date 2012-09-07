@@ -19,12 +19,11 @@ session:
                 -
                     cmd:
                         - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
-                        - tail -f app/logs/dev.log
+                        - tail -f app/logs/dev.log app/logs/test.log
                     width: 50
                 -
                     cmd:
-                        - 'if [ ! -f app/logs/test.log ]; then touch app/logs/test.log ; fi'
-                        - tail -f app/logs/test.log
+                        - php -S localhost:8080 -t web
                     height: 55
                 -
                     cmd:
