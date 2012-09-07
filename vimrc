@@ -140,12 +140,11 @@ inoremap <Esc>[C <Left>
 inoremap <Esc>[D <Right>
 
 
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 
 if has('gui_running')
-    set guifont=Monaco\ 12
-else
-  let g:Powerline_symbols = 'unicode'
+    set guifont=Monaco\ For\ Powerline\ 12
+    let g:Powerline_symbols = 'fancy'
 endif
 
 "
