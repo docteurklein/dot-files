@@ -15,7 +15,7 @@ autoload -U promptinit
 promptinit
 
 PROMPT="%F{green}%~%F 
-%F{yellow}%(?..[%?%1v] )%(2v.%U%2v%u.)%f%B%#%b"
+%F{yellow}%(?..[%?%1v] )%(2v.%U%2v%u.)%f%B %#%b "
 
 autoload -U compinit
 compinit
