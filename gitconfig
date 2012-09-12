@@ -1,6 +1,6 @@
 [user]
-	name = Klein Florian
-	email = florian.klein@free.fr
+    name = Klein Florian
+    email = florian.klein@free.fr
 [core]
     autocrlf = false
     ui = true
@@ -33,7 +33,8 @@
     co  = checkout
     cm  = commit
     ctags = !.git/hooks/ctags
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 [init]
     templatedir = ~/.git_template
 [rerere]
-	enabled = 1
+    enabled = 1
