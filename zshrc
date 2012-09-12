@@ -14,8 +14,8 @@ eval `dircolors -b`
 autoload -U promptinit
 promptinit
 
-PROMPT="%F{yellow}%~ %F{white}
-%(?..[%?%1v] )%(2v.%U%2v%u.)%f%B%#%b"
+PROMPT="%F{green}%~%F 
+%F{yellow}%(?..[%?%1v] )%(2v.%U%2v%u.)%f%B%#%b"
 
 autoload -U compinit
 compinit
