@@ -2,13 +2,15 @@ session:
     name: <%= File.basename(Dir.getwd) %>
     windows:
         - 
+            cmd_separator: "\n"
+            with_env_var: false
             name: editor
-            root: <%= Dir.getwd %>
             splits:
                 - { cmd: vim }
         - 
+            cmd_separator: "\n"
+            with_env_var: false
             name: shell
-            root: <%= Dir.getwd %>
             filters:
                 before: clear
             splits:
