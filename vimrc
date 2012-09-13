@@ -296,13 +296,10 @@ function! <SID>MkdirsIfNotExists(directory)
 endfunction
 
 "
-" Ack
-let g:ackprg = 'ack -H --nocolor --nogroup --column --type-add html=twig --ignore-dir=cache --ignore-dir=logs'
-
-" do a Ack search on the word under cursor
-nmap <leader>f :Ack "<C-r><C-w>"
-" do a Ack search on the selected text
-vmap <leader>f y:Ack "<C-r>"
+" do a grep search on the word under cursor
+nmap <leader>f :grep -Rno "<C-r><C-w>"
+" do a grep search on the selected text
+vmap <leader>f y:grep -Rno "<C-r>"
 " search on php.net for current word
 command! Browse : ! $BROWSER php.net/<cword>
 
