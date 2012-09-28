@@ -1,8 +1,7 @@
 --extra=+f
---languages=PHP,JavaScript
 --totals=yes
 --tag-relative=yes
---recurse 
+--recurse
 
 --exclude='*/cache/*' 
 --exclude='*/logs/*' 
@@ -13,18 +12,15 @@
 --exclude='*/zend/*' 
 --exclude='*/bootstrap.*'
 
---langdef=js
---langmap=js:.js
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
---regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
---regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/,function/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
-
+--languages=PHP
+--regex-PHP=/abstract class ([^ ]*)/\1/c/
+--regex-PHP=/interface ([^ ]*)/\1/c/
+--regex-PHP=/trait ([^ ]*)/\1/c/
+--regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/
 --PHP-kinds=cidf
 --fields=+ain 
---fields=+l 
+--fields=+l
 
 --langdef=file
 --langmap=file:.html.twig.xml.yml
+
