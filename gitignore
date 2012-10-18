@@ -1,5 +1,6 @@
 .idea
 .tags
+cscope.*
 Session.vim
 node_modules
 tags

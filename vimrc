@@ -28,10 +28,6 @@ if has('gui_running')
     set listchars=eol:↩,trail:‧,tab:>⁙
 endif
 
-" But make it easy to switch it
-nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>:set softtabstop=2<cr>
-nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
-
 let g:feature_filetype = "behat"
 let g:syntastic_phpcs_disable = 1
 
@@ -134,10 +130,10 @@ set mouse=a
 "noremap   <Right>  <NOP>
 
 " tmux specific mapping
-inoremap <Esc>[A <Up>
-inoremap <Esc>[B <Down>
-inoremap <Esc>[C <Left>
-inoremap <Esc>[D <Right>
+"inoremap <Esc>[A <Up>
+"inoremap <Esc>[B <Down>
+"inoremap <Esc>[C <Left>
+"inoremap <Esc>[D <Right>
 
 
 let g:Powerline_symbols = 'unicode'
@@ -246,9 +242,23 @@ autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :ca
 
 
 "
-" Ctags
+" ctags, cscope
 "
+set cscopetag cst
+cscope add cscope.out
+
 set tags=tags,vendor.tags,pear.tags
+
+" map for cscope
+
+nmap <C-@>s :cscope find s <C-R>=expand("<cword>")<CR>
+nmap <C-@>g :cscope find g <C-R>=expand("<cword>")<CR>
+nmap <C-@>c :cscope find c <C-R>=expand("<cword>")<CR>
+nmap <C-@>t :cscope find t <C-R>=expand("<cword>")<CR>
+nmap <C-@>e :cscope find e <C-R>=expand("<cword>")<CR>
+nmap <C-@>f :cscope find f <C-R>=expand("<cfile>")<CR>
+nmap <C-@>i :cscope find i ^<C-R>=expand("<cfile>")<CR>
+nmap <C-@>d :cscope find d <C-R>=expand("<cword>")<CR>
 
 
 " Explore tags for the word under the cursor
@@ -266,7 +276,6 @@ map [t :tprevious<CR>
 let g:Tlist_Ctags_Cmd = 'ctags'
 let Tlist_Show_One_File = 1
 let Tlist_Sort_Type = "name"
-nnoremap <silent> <C-F8> :TlistToggle<CR>
 
 "
 " Lusty
@@ -297,9 +306,9 @@ endfunction
 
 "
 " do a grep search on the word under cursor
-nmap <leader>f :grep -Rno "<C-r><C-w>"
+nmap <leader>f :grep -Rn "<C-r><C-w>"
 " do a grep search on the selected text
-vmap <leader>f y:grep -Rno "<C-r>"
+vmap <leader>f y:grep -Rn "<C-r>"
 " search on php.net for current word
 command! Browse : ! $BROWSER php.net/<cword>
 
@@ -327,15 +336,3 @@ set iskeyword-=:
 " Snipmate
 let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
 
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction

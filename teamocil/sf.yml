@@ -25,7 +25,7 @@ session:
                     width: 50
                 -
                     cmd:
-                        - php -S localhost:8080 -t web
+                        - php -S localhost.dev:8080 -t web
                     height: 55
                 -
                     cmd:
