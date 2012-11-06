@@ -139,7 +139,7 @@ set mouse=a
 let g:Powerline_symbols = 'unicode'
 
 if has('gui_running')
-    set guifont=Monaco\ For\ Powerline\ 12
+    set guifont=Monaco\ For\ Powerline\ 13
     let g:Powerline_symbols = 'fancy'
 endif
 
