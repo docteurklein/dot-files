@@ -332,7 +332,11 @@ com! -nargs=* Phpunit make <q-args> | cw
 " dont use ":" as a keyword separator
 set iskeyword-=:
 
-let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_at_startup = 1
+"if !exists('g:neocomplcache_omni_patterns')
+"    let g:neocomplcache_omni_patterns = {}
+"endif
+"let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "
 " Snipmate
 let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
