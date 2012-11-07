@@ -332,6 +332,7 @@ com! -nargs=* Phpunit make <q-args> | cw
 " dont use ":" as a keyword separator
 set iskeyword-=:
 
+let g:neocomplcache_enable_at_startup = 1
 "
 " Snipmate
 let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
