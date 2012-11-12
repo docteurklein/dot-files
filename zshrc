@@ -28,23 +28,18 @@ zle -N edit-command-line
 setopt histignorealldups
 setopt autocd
 setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
-setopt pushdignoredups
-setopt nohup
 setopt extendedglob
-setopt completeinword
 setopt vi
 setopt promptsubst
 setopt globdots
 setopt histreduceblanks
 setopt histignorespace
-setopt histignorealldups
 setopt SH_WORD_SPLIT
 setopt automenu
 setopt cdablevars
 setopt nohup
 setopt listpacked
 setopt nolisttypes
-setopt extendedglob
 setopt completeinword
 setopt alwaystoend
 setopt correct
