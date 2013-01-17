@@ -120,14 +120,14 @@ set undolevels=1000             " use many levels of undo
 set mouse=a
 
 "unmap arrows
-"noremap  <Up>     <NOP>
-"inoremap  <Down>   <NOP>
-"inoremap  <Left>   <NOP>
-"inoremap  <Right>  <NOP>
-"noremap   <Up>     <NOP>
-"noremap   <Down>   <NOP>
-"noremap   <Left>   <NOP>
-"noremap   <Right>  <NOP>
+"noremap  <up>    <nop>
+"noremap  <down>  <nop>
+"noremap  <left>  <nop>
+"noremap  <right> <nop>
+"vnoremap <up>    <nop>
+"vnoremap <down>  <nop>
+"vnoremap <left>  <nop>
+"vnoremap <right> <nop>
 
 " tmux specific mapping
 "inoremap <Esc>[A <Up>
