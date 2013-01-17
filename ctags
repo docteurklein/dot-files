@@ -1,4 +1,3 @@
---extra=+f
 --totals=yes
 --tag-relative=yes
 --recurse
@@ -12,7 +11,6 @@
 --exclude='*/zend/*' 
 --exclude='*/bootstrap.*'
 
---languages=PHP
 --regex-PHP=/abstract class ([^ ]*)/\1/c/
 --regex-PHP=/interface ([^ ]*)/\1/c/
 --regex-PHP=/trait ([^ ]*)/\1/c/
@@ -24,3 +22,5 @@
 --langdef=file
 --langmap=file:.html.twig.xml.yml
 
+--languages=PHP,file
+--extra=+f
