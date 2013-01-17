@@ -4,3 +4,6 @@ syntax match phpspecExampleSubject / \(its_[^_]*\|it\)/ contained containedin=ph
 syntax match phpspecExampleDelimiter "_" conceal cchar=  contained containedin=phpspecExampleName,phpspecExampleSubject
 
 setlocal conceallevel=2
+
+nmap <leader>s :NeoComplCacheLock <CR> :set completefunc=CompleteSymfony <CR>
+nmap <leader>S :NeoComplCacheUnlock <CR>
