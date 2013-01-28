@@ -308,7 +308,7 @@ endfunction
 " do a grep search on the word under cursor
 nmap <leader>f :grep -Rn "<C-r><C-w>"
 " do a grep search on the selected text
-vmap <leader>f y:grep -Rn "<C-r>/"
+vmap <leader>f y:grep -Rn "<C-r>"
 " search on php.net for current word
 command! Browse : ! $BROWSER php.net/<cword>
 
