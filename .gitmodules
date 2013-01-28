@@ -64,6 +64,9 @@
 [submodule "vim/bundle/behat"]
 	path = vim/bundle/behat
 	url = http://github.com/veloce/vim-behat.git
+[submodule "vim/bundle/powerline"]
+	path = vim/bundle/powerline
+	url = http://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = http://github.com/majutsushi/tagbar.git
