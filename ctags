@@ -19,8 +19,8 @@
 --fields=+ain 
 --fields=+l
 
---langdef=file
---langmap=file:.html.twig.xml.yml
+--langdef=FILE
+--langmap=FILE:.html.twig.xml.yml
 
---languages=PHP,file
+--languages=PHP,FILE
 --extra=+f
