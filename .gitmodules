@@ -88,3 +88,6 @@
 [submodule "vim/bundle/phpspec"]
 	path = vim/bundle/phpspec
 	url = git://github.com/Herzult/phpspec-vim.git
+[submodule "vim/bundle/vdebug"]
+	path = vim/bundle/vdebug
+	url = git://github.com/joonty/vdebug.git

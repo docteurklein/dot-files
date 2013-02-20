@@ -1,6 +1,7 @@
 export PATH="$PATH:/usr/bin/vendor_perl"
 export PATH="$PATH:/home/florian/bin"
 export PATH="$PATH:/home/florian/.gem/bin"
+export PATH="$PATH:./bin"
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
@@ -85,4 +86,5 @@ alias gph='git push'
 alias gpl='git pull'
 alias gpr='git pull --rebase'
 alias gco='git checkout'
+alias sf='php app/console'
 
