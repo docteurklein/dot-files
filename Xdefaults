@@ -42,11 +42,11 @@ URxvt.color14             : #55FFFF
 ! white
 URxvt.color7              : #AAAAAA
 
-URxvt*font:                 xft:Monaco for Powerline:regular:size=13
-URxvt*imFont:               xft:Monaco for Powerline:regular:size=13
-URxvt*boldFont:             xft:Monaco for Powerline:bold:size=13
-URxvt*italicFont:           xft:Monaco for Powerline:italic:size=13
-URxvt*boldItalicFont:       xft:Monaco for Powerline:bold:italic:size=13
+URxvt*font:                 xft:Droid Sans Mono for Powerline:regular:size=15
+URxvt*imFont:               xft:Droid Sans Mono for Powerline:regular:size=15
+URxvt*boldFont:             xft:Droid Sans Mono for Powerline:bold:size=15
+URxvt*italicFont:           xft:Droid Sans Mono for Powerline:italic:size=15
+URxvt*boldItalicFont:       xft:Droid Sans Mono for Powerline:bold:italic:size=15
 
 URxvt.perl-ext-common     : default,matcher
 URxvt.urlLauncher         : chromium

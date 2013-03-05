@@ -74,6 +74,8 @@ for file in $HOME/.zsh/rc/*.rc; do
         source $file
 done
 
+. /usr/share/zsh/site-contrib/powerline.zsh
+
 #Personnal alias
 
 alias ll='ls -Al --color=auto -F'

@@ -139,7 +139,7 @@ set mouse=a
 let g:Powerline_symbols = 'unicode'
 
 if has('gui_running')
-    set guifont=Monaco\ For\ Powerline\ 13
+    set guifont=Inconsolata\ For\ Powerline\ 15
     let g:Powerline_symbols = 'fancy'
 endif
 
@@ -294,6 +294,7 @@ map <S-Left> :bprevious<CR>
 "let g:ctrlp_map = '<leader>t'
 "nmap <leader>b :CtrlPBuffer<cr>
 let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_match_window_bottom = 0
 
 
 autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
