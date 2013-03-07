@@ -43,9 +43,6 @@
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
 	url = http://github.com/tpope/vim-ragtag.git
-[submodule "vim/bundle/snipMate"]
-	path = vim/bundle/snipMate
-	url = http://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = http://github.com/vim-scripts/matchit.zip.git
@@ -94,6 +91,6 @@
 [submodule "vim/bundle/git-gutter"]
 	path = vim/bundle/git-gutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
