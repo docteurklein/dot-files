@@ -91,3 +91,9 @@
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
 	url = git://github.com/joonty/vdebug.git
+[submodule "vim/bundle/git-gutter"]
+	path = vim/bundle/git-gutter
+	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
