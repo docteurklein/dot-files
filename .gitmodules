@@ -18,7 +18,7 @@
 	url = http://github.com/chrismetcalf/vim-taglist.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = http://github.com/gregsexton/gitv.git
