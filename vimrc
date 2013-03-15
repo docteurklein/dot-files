@@ -339,7 +339,19 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_force_overwrite_completefunc = 1
+
 "
-" Snipmate
-let g:snips_author = 'Florian Klein <florian.klein@free.fr>'
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  UltiSnips
+"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+
+"" git grep
+set grepprg=git\ grep\ -n
 
