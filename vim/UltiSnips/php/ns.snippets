@@ -1,0 +1,3 @@
+snippet ns "PSR0 namespace"
+namespace ${3:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+endsnippet

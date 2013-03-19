@@ -1,0 +1,8 @@
+snippet cpsr "PSR0 class"
+namespace ${3:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+
+class ${2:`!v Filename('', 'myClass')`}
+{
+    ${1}
+}
+endsnippet

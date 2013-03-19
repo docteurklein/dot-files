@@ -351,7 +351,3 @@ let g:UltiSnipsListSnippets = '<c-tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-
-"" git grep
-set grepprg=git\ grep\ -n
-
