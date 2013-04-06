@@ -30,7 +30,7 @@
 	url = http://github.com/veloce/vim-aldmeris.git
 [submodule "vim/bundle/vim-php-namespace"]
 	path = vim/bundle/vim-php-namespace
-	url = http://github.com/arnaud-lb/vim-php-namespace.git
+	url = git@github.com:arnaud-lb/vim-php-namespace.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = http://github.com/godlygeek/tabular.git
@@ -91,3 +91,6 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim/bundle/php54-syntax"]
+	path = vim/bundle/php54-syntax
+	url = git://github.com/donnut/vim-php54-syntax.git
