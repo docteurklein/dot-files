@@ -75,30 +75,21 @@ set noswapfile                    " Use an SCM instead of swap files
 set completeopt=menuone
 
 set laststatus=2                   " Show the status line all the time
-set statusline=
-"set statusline=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%{fugitive#statusline()}
-set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ENC=%{&enc}]\ [FENC=%{&fenc}]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-
-" Change line numbers color
-autocmd InsertEnter * hi LineNr      ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
-autocmd InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605958 guibg=#151515
-
-" Change statusline color
-autocmd InsertEnter * hi StatusLine  ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
-autocmd InsertLeave * hi StatusLine  term=bold,reverse ctermfg=16 ctermbg=252 gui=italic guifg=#000000 guibg=#dddddd
-
-autocmd BufEnter    * hi SpellCap    guisp=Orange
-autocmd BufEnter    * hi Comment     gui=NONE
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Highlight current line
 set cursorline
 
+"Change line numbers color
+autocmd InsertEnter * hi LineNr      ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
+autocmd InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605958 guibg=#151515
+
+autocmd BufEnter    * hi SpellCap    guisp=Orange
+autocmd BufEnter    * hi Comment     gui=NONE
+
 " Remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,css,html,xml,yml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Syntastic
 let g:syntastic_enable_signs = 1
@@ -106,9 +97,6 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_quiet_warnings = 0
 let g:syntastic_enable_balloons = 1
 
-" Enable folding by indentation
-set foldmethod=indent
-"set fillchars=fold:⋯
 " Disable folding by default
 set nofoldenable
 
@@ -178,7 +166,7 @@ endif
 
 set wildmenu                        " Better completion
 set wildmode=list:longest           " BASH style completion
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*.pyo,*.log,**/cache/**,**/logs/**,**/zend/**,**/vendor/**/vendor/**,web/css,web/js,web/bundles,*/project/*,*/target/*,*.hi
+set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif
 
 "
 " Navigation & Viewport
@@ -237,8 +225,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Automatically remove trailing whitespaces and ^M chars
-autocmd FileType c,cpp,java,php,js,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 
 "
@@ -332,13 +318,6 @@ com! -nargs=* Phpunit make <q-args> | cw
 
 " dont use ":" as a keyword separator
 set iskeyword-=:
-
-let g:neocomplcache_enable_at_startup = 1
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_force_overwrite_completefunc = 1
 
 "
 "

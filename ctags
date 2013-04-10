@@ -2,22 +2,12 @@
 --tag-relative=yes
 --recurse
 
---exclude='*/cache/*' 
---exclude='*/logs/*' 
---exclude='*/data/*' 
---exclude='\.git' 
---exclude='\.svn' 
---exclude='*/swiftmailer/*' 
---exclude='*/zend/*' 
---exclude='*/bootstrap.*'
-
 --regex-PHP=/abstract class ([^ ]*)/\1/c/
 --regex-PHP=/interface ([^ ]*)/\1/c/
 --regex-PHP=/trait ([^ ]*)/\1/c/
 --regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/
 --PHP-kinds=cidf
---fields=+ain 
---fields=+l
+--fields=+ainl
 
 --langdef=FILE
 --langmap=FILE:.html.twig.xml.yml
