@@ -1,7 +1,8 @@
-export PATH="$PATH:/usr/bin/vendor_perl"
-export PATH="$PATH:/home/florian/bin"
-export PATH="$PATH:/home/florian/.gem/bin"
-export PATH="$PATH:./bin"
+export PATH=$PATH:/usr/bin/vendor_perl
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/.gem/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:./bin
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
@@ -74,7 +75,15 @@ for file in $HOME/.zsh/rc/*.rc; do
         source $file
 done
 
-. /usr/share/zsh/site-contrib/powerline.zsh
+if [ -f /usr/share/zsh/site-contrib/powerline.zsh ]
+then
+    . /usr/share/zsh/site-contrib/powerline.zsh
+fi
+
+if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]
+then
+    . ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
 #Personnal alias
 

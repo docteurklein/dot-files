@@ -1,13 +1,13 @@
 session:
     name: <%= File.basename(Dir.getwd) %>
     windows:
-        - 
+        -
             cmd_separator: "\n"
             with_env_var: false
             name: editor
             splits:
                 - { cmd: vim }
-        - 
+        -
             cmd_separator: "\n"
             with_env_var: false
             name: shell
@@ -25,7 +25,7 @@ session:
                     width: 50
                 -
                     cmd:
-                        - php -S localhost.dev:8080 -t web
+                        - php -S localhost:8080 -t web
                     height: 55
                 -
                     cmd:
