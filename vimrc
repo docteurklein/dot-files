@@ -200,13 +200,6 @@ nnoremap - 3<c-w><
 inoremap jj <Esc>
 inoremap <S-CR> <Esc>
 
-" querty like
-imap '' {
-imap == }
-imap (( [
-imap )) ]
-imap /§ \
-
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
 vnoremap <leader>p "0p

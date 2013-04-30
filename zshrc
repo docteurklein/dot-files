@@ -98,4 +98,5 @@ alias gpl='git pull'
 alias gpr='git pull --rebase'
 alias gco='git checkout'
 alias sf='php app/console'
+alias composer='composer.phar'
 

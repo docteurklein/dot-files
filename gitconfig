@@ -6,7 +6,7 @@
     ui = true
     editor = vim
     whitespace = trailing-space,space-before-tab
-    mergetool = meld
+    mergetool = gvimdiff
     excludesfile = /home/florian/.gitignore
 [color]
     ui=auto
