@@ -3,6 +3,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/.gem/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:./bin
+export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
