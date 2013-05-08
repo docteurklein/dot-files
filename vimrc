@@ -129,7 +129,7 @@ set mouse=a
 let g:Powerline_symbols = 'unicode'
 
 if has('gui_running')
-    set guifont=Inconsolata\ For\ Powerline\ 15
+    set guifont=Droid\ Sans\ Mono\ For\ Powerline\ 15
     let g:Powerline_symbols = 'fancy'
 endif
 
@@ -286,11 +286,10 @@ function! <SID>MkdirsIfNotExists(directory)
     endif
 endfunction
 
-"
+" do a grep search on the selected text
+vmap <leader>f y:grep -Rn "<C-r>""
 " do a grep search on the word under cursor
 nmap <leader>f :grep -Rn "<C-r><C-w>"
-" do a grep search on the selected text
-vmap <leader>f y:grep -Rn "<C-r>/"
 " search on php.net for current word
 command! Browse : ! $BROWSER php.net/<cword>
 
