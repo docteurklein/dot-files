@@ -48,10 +48,6 @@ URxvt*boldFont:             xft:Droid Sans Mono for Powerline:bold:size=15
 URxvt*italicFont:           xft:Droid Sans Mono for Powerline:italic:size=15
 URxvt*boldItalicFont:       xft:Droid Sans Mono for Powerline:bold:italic:size=15
 
-URxvt.perl-ext-common     : default,matcher
-URxvt.urlLauncher         : chromium
-URxvt.matcher.button      : 2
-
 ! Control
 *URxvt*keysym.C-F1        : \033[1;5P
 *URxvt*keysym.C-F2        : \033[1;5Q
@@ -77,3 +73,7 @@ URxvt.matcher.button      : 2
 *URxvt*keysym.C-Down  : \033[1;5B
 *URxvt*keysym.C-Right : \033[1;5C
 *URxvt*keysym.C-Left  : \033[1;5D
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
