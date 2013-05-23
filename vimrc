@@ -205,7 +205,10 @@ nnoremap <leader>p "0p
 vnoremap <leader>p "0p
 
 
+" buf delete all
 cabbrev bda bufdo bd<cr>
+" buf wipeout all
+cabbrev bwa bufdo bwi<cr>
 
 "
 " Chars
