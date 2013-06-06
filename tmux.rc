@@ -1,4 +1,0 @@
-tmux new-session -d -s florian
-tmux new-window -t florian:1 -n 'shell'
-tmux select-window -t florian:1
-tmux -2 attach-session -t florian

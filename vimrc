@@ -229,6 +229,7 @@ filetype indent on
 " ctags, cscope
 "
 set cscopetag cst
+set csto=1
 cscope add cscope.out
 
 set tags=tags,vendor.tags,pear.tags
