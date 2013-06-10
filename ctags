@@ -10,7 +10,7 @@
 --fields=+ainl
 
 --langdef=FILE
---langmap=FILE:.html.twig.xml.yml
+--langmap=FILE:.html.twig.xml.yml.js
 
 --languages=PHP,FILE
 --extra=+f
