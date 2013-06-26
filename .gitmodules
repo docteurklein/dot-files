@@ -91,3 +91,6 @@
 [submodule "vim/bundle/php54-syntax"]
 	path = vim/bundle/php54-syntax
 	url = git://github.com/donnut/vim-php54-syntax.git
+[submodule "git_template/hooks/composer-check"]
+	path = git_template/hooks/composer-check
+	url = git://gist.github.com/5867424.git
