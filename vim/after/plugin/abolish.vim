@@ -1,4 +1,5 @@
 " usual typos
 Abolish currecn{y,ies}           currenc{}
-Abolish namepsace                namespace
+Abolish name{psace,sapce}        namespace
 Abolish categroy                 category
+Abolish inteface                 interface

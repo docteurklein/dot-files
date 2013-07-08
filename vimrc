@@ -317,6 +317,8 @@ com! -nargs=* Phpunit make <q-args> | cw
 " dont use ":" as a keyword separator
 set iskeyword-=:
 
+match ErrorMsg '\s\+$'
+
 "
 "
 """"""""""""""""""""""""""""""""""""""""
