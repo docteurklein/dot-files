@@ -94,3 +94,6 @@
 [submodule "git_template/hooks/composer-check"]
 	path = git_template/hooks/composer-check
 	url = git://gist.github.com/5867424.git
+[submodule "vim/bundle/phpcomplete"]
+	path = vim/bundle/phpcomplete
+	url = git://github.com/shawncplus/phpcomplete.vim.git

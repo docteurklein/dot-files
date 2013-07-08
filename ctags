@@ -7,7 +7,7 @@
 --regex-PHP=/trait ([^ ]*)/\1/c/
 --regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/
 --PHP-kinds=cidf
---fields=+ainl
+--fields=+aimS
 
 --langdef=FILE
 --langmap=FILE:.html.twig.xml.yml.js
