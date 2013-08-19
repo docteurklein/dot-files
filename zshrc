@@ -7,7 +7,8 @@ export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
-export BROWSER=chromium-browser
+export EDITOR="vim"
+export BROWSER="chromium-browser"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
@@ -69,8 +70,6 @@ then
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
-
-export EDITOR="vim"
 
 for file in $HOME/.zsh/rc/*.rc; do
         source $file

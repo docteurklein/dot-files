@@ -1,16 +1,12 @@
 --totals=yes
 --tag-relative=yes
 --recurse
-
---regex-PHP=/abstract class ([^ ]*)/\1/c/
---regex-PHP=/interface ([^ ]*)/\1/c/
---regex-PHP=/trait ([^ ]*)/\1/c/
---regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/
---PHP-kinds=cidf
---fields=+aimS
-
---langdef=FILE
---langmap=FILE:.html.twig.xml.yml.js
-
---languages=PHP,FILE
 --extra=+f
+
+--langdef=file
+--langmap=file:.html.twig.xml.yml.js
+
+--php-kinds=cdfint
+
+--languages=php,file
+

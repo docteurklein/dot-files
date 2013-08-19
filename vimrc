@@ -295,7 +295,7 @@ vmap <leader>f y:grep -Rn "<C-r>""
 " do a grep search on the word under cursor
 nmap <leader>f :grep -Rn "<C-r><C-w>"
 " search on php.net for current word
-command! Browse : ! $BROWSER php.net/<cword>
+command! Browse : ! xdg-open http://php.net/<cword>
 
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/

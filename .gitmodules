@@ -34,9 +34,6 @@
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
 	url = http://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
-[submodule "vim/bundle/autoclose"]
-	path = vim/bundle/autoclose
-	url = http://github.com/vim-scripts/AutoClose.git
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
 	url = http://github.com/tpope/vim-ragtag.git
@@ -97,3 +94,9 @@
 [submodule "vim/bundle/phpcomplete"]
 	path = vim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule "vim/bundle/delimitate"]
+	path = vim/bundle/delimitate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/bulkfill"]
+	path = vim/bundle/bulkfill
+	url = git://github.com/vim-scripts/bufkill.vim.git

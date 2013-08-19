@@ -2,34 +2,31 @@ session:
     name: <%= File.basename(Dir.getwd) %>
     windows:
         -
-            cmd_separator: "\n"
-            with_env_var: false
             name: editor
             splits:
                 - { cmd: vim }
-        -
             cmd_separator: "\n"
             with_env_var: false
+        -
             name: shell
+            cmd_separator: "\n"
+            with_env_var: false
             filters:
                 before: clear
             splits:
                 -
-                    cmd:
-                        - tmux select-window -t editor
-                    focus: true
+                    cmd: ~
                 -
                     cmd:
                         - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
                         - tail -f app/logs/dev.log app/logs/test.log
-                    width: 50
+                    width: 20
                 -
                     cmd:
                         - php -S localhost:8080 -t web -d xdebug.cli_color=0
                     height: 55
                 -
                     cmd:
-                        - 'if [ ! -f pear.tags ]; then ctags -R -f pear.tags /usr/share/pear ; fi'
                         - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
                         - guard
                     height: 20
