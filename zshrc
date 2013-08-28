@@ -1,5 +1,7 @@
 export PATH=$PATH:/usr/bin/vendor_perl
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/.phpenv/bin
+export PATH=$PATH:~/.phpenv/shims
 export PATH=$PATH:~/.gem/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:./bin
