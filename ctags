@@ -4,7 +4,7 @@
 --extra=+f
 
 --langdef=file
---langmap=file:.html.twig.xml.yml.js
+--langmap=file:.html.twig.xml.yml.js.feature
 
 --php-kinds=cdfint
 
