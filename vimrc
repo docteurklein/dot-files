@@ -286,7 +286,7 @@ autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 
 function! <SID>MkdirsIfNotExists(directory)
     if(!isdirectory(a:directory))
-        call system('mkdir -p '.shellescape(a:directory))
+        call mkdir(shellescape(a:directory), 'p')
     endif
 endfunction
 
