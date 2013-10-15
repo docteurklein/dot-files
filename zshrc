@@ -103,3 +103,6 @@ alias gco='git checkout'
 alias sf='php app/console'
 alias composer='composer.phar'
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
