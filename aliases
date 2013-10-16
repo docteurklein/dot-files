@@ -1,0 +1,16 @@
+#Personnal alias
+
+alias ll='ls -Al --color=auto -F'
+alias ack-grep='ack'
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gc='git commit'
+alias gph='git push'
+alias gpl='git pull'
+alias gpr='git pull --rebase'
+alias grc='git rebase --continue'
+alias gco='git checkout'
+alias sf='php app/console'
+alias composer='composer.phar'
+

@@ -19,6 +19,8 @@ ln -s ~/dot-files/toprc         ~/.toprc
 
 ln -s ~/dot-files/zsh           ~/.zsh
 ln -s ~/dot-files/zshrc         ~/.zshrc
+ln -s ~/dot-files/aliases       ~/.aliases
+ln -s ~/dot-files/envvars       ~/.envvars
 
 ln -s ~/dot-files/w3m          ~/.w3m
 

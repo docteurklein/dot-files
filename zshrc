@@ -1,21 +1,5 @@
-export PATH=$PATH:/usr/bin/vendor_perl
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/.phpenv/bin
-export PATH=$PATH:~/.phpenv/shims
-export PATH=$PATH:~/.gem/bin
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:./bin
-export PATH=$PATH:./vendor/bin
-export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
-export GEM_HOME=~/.gem
-export GEM_PATH=~/.gem
+source $HOME/.envvars
 
-export EDITOR="vim"
-export BROWSER="chromium-browser"
-
-export HISTFILE=~/.zsh_history
-export HISTSIZE=500000
-export SAVEHIST=500000
 eval `dircolors -b`
 
 autoload -U promptinit
@@ -88,21 +72,4 @@ then
     . ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
-#Personnal alias
-
-alias ll='ls -Al --color=auto -F'
-alias ack-grep='ack'
-alias gs='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gc='git commit'
-alias gph='git push'
-alias gpl='git pull'
-alias gpr='git pull --rebase'
-alias gco='git checkout'
-alias sf='php app/console'
-alias composer='composer.phar'
-
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+source $HOME/.aliases

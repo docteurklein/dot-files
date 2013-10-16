@@ -31,7 +31,7 @@ if has('gui_running')
 endif
 
 let g:feature_filetype = "behat"
-let g:syntastic_phpcs_disable = 1
+let g:syntastic_php_checkers=['php', 'php-cs-fixer', 'phplint']
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
@@ -310,9 +310,6 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" phpunit compilation
-com! -nargs=* Phpunit make <q-args> | cw
 
 " dont use ":" as a keyword separator
 set iskeyword-=:
