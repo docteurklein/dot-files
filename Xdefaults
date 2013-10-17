@@ -42,11 +42,11 @@ URxvt.color14             : #55FFFF
 ! white
 URxvt.color7              : #AAAAAA
 
-URxvt*font:                 xft:Droid Sans Mono For Powerline:regular:size=15
-URxvt*imFont:               xft:Droid Sans Mono For Powerline:regular:size=15
-URxvt*boldFont:             xft:Droid Sans Mono For Powerline:bold:size=15
-URxvt*italicFont:           xft:Droid Sans Mono For Powerline:italic:size=15
-URxvt*boldItalicFont:       xft:Droid Sans Mono For Powerline:bold:italic:size=15
+URxvt*font:                 xft:Droid Sans Mono For Powerline:regular:size=14
+URxvt*imFont:               xft:Droid Sans Mono For Powerline:regular:size=14
+URxvt*boldFont:             xft:Droid Sans Mono For Powerline:bold:size=14
+URxvt*italicFont:           xft:Droid Sans Mono For Powerline:italic:size=14
+URxvt*boldItalicFont:       xft:Droid Sans Mono For Powerline:bold:italic:size=14
 
 ! Control
 *URxvt*keysym.C-F1        : \033[1;5P
