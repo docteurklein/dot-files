@@ -311,9 +311,6 @@ com! -nargs=1 Qfdofile try | sil cfirst |
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" dont use ":" as a keyword separator
-set iskeyword-=:
-
 match ErrorMsg '\s\+$'
 
 "
