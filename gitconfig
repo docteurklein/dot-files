@@ -42,3 +42,8 @@
 	default = current
 [web]
 	browser = chromium-browser
+[merge]
+	tool = gvimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
