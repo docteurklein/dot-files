@@ -285,7 +285,9 @@ let g:ctrlp_match_window_bottom = 0
 autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 
 function! <SID>MkdirsIfNotExists(directory)
-    call mkdir(a:directory, 'p')
+    if(!isdirectory(a:directory))
+        call mkdir(a:directory, 'p')
+    endif
 endfunction
 
 " do a grep search on the selected text
