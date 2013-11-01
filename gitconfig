@@ -5,7 +5,7 @@
     autocrlf = false
     ui = true
     editor = vim
-    whitespace = trailing-space,space-before-tab
+    whitespace = trailing-space,space-before-tab,tab-in-indent
     mergetool = gvimdiff
     excludesfile = /home/florian/.gitignore
 [color]
