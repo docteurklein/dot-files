@@ -80,15 +80,12 @@ set laststatus=2                   " Show the status line all the time
 
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" Highlight current line
+" Highlight current line/column
 set cursorline
+set cursorcolumn
 
-"Change line numbers color
-autocmd InsertEnter * hi LineNr      ctermfg=16 ctermbg=214 guifg=Orange guibg=#151515
-autocmd InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=232 guifg=#605958 guibg=#151515
-
-autocmd BufEnter    * hi SpellCap    guisp=Orange
-autocmd BufEnter    * hi Comment     gui=NONE
+au   InsertEnter   *   hi   CursorLine   gui=bold cterm=bold
+au   InsertLeave   *   hi   CursorLine   gui=none cterm=none
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))

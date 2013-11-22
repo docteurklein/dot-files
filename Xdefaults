@@ -3,7 +3,7 @@ URxvt*foreground          : #A8A8A8
 URxvt*scrollBar_right     : false
 URxvt*scrollBar           : false
 URxvt*borderLess          : false
-URxvt*transparent         : true
+URxvt*transparent         : false
 URxvt*shading             : 10
 URxvt*tint                : white
 XTerm*scrollTtyOutput     : false
