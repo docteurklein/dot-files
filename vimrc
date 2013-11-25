@@ -84,8 +84,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 set cursorline
 set cursorcolumn
 
-au   InsertEnter   *   hi   CursorLine   gui=bold cterm=bold
-au   InsertLeave   *   hi   CursorLine   gui=none cterm=none
+au   InsertEnter   *   hi   CursorLine   gui=bold   cterm=bold
+au   InsertLeave   *   hi   CursorLine   gui=none   cterm=none
 
 " Remove trailing whitespaces and ^M chars
 autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))

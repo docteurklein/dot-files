@@ -100,3 +100,6 @@
 [submodule "vim/bundle/bulkfill"]
 	path = vim/bundle/bulkfill
 	url = git://github.com/vim-scripts/bufkill.vim.git
+[submodule "vim/bundle/easymotion"]
+	path = vim/bundle/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
