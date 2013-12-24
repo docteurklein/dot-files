@@ -103,3 +103,6 @@
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim/bundle/php-cs-fixer"]
+	path = vim/bundle/php-cs-fixer
+	url = git://github.com/stephpy/vim-php-cs-fixer
