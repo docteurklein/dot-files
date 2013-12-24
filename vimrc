@@ -31,7 +31,7 @@ if has('gui_running')
 endif
 
 let g:feature_filetype = "behat"
-let g:syntastic_php_checkers=['php', 'php-cs-fixer', 'phplint']
+
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "
@@ -95,6 +95,13 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_quiet_warnings = 0
 let g:syntastic_enable_balloons = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_php_checkers=['php']
+highlight link SyntasticStyleErrorSign SyntasticStyleWarningSign
+highlight link SyntasticStyleErrorLine SyntasticStyleWarningLine
 
 " Disable folding by default
 set nofoldenable
