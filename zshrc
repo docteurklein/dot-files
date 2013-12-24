@@ -73,3 +73,6 @@ then
 fi
 
 source $HOME/.aliases
+
+# added by travis gem
+[ -f /home/florian/.travis/travis.sh ] && source /home/florian/.travis/travis.sh
