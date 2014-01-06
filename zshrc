@@ -4,7 +4,6 @@ eval `dircolors -b`
 
 autoload -U promptinit
 promptinit
-
 prompt clint
 
 PROMPT="%F{green}%~%F 
@@ -16,6 +15,13 @@ compinit
 
 autoload -U edit-command-line
 zle -N edit-command-line
+
+autoload up-line-or-beginning-search
+autoload down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey   "^[[A"    up-line-or-beginning-search
+bindkey   "^[[B"    down-line-or-beginning-search
 
 setopt histignorealldups
 setopt autocd
@@ -36,8 +42,6 @@ setopt completeinword
 setopt alwaystoend
 setopt correct
 
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
 bindkey "^xe" edit-command-line
 bindkey "^x^e" edit-command-line
 
