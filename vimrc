@@ -301,6 +301,8 @@ nmap <leader>f :grep -Rn "<C-r><C-w>"
 " search on php.net for current word
 command! Browse : ! xdg-open http://php.net/<cword>
 
+cmap w!! w ! sudo tee % > /dev/null
+
 
 " Processing results in quickfix http://efiquest.org/2009-02-19/32/
 com! -nargs=1 Qfdo try | sil cfirst |
@@ -327,4 +329,5 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsListSnippets = '<c-tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 
