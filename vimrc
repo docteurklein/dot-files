@@ -239,7 +239,6 @@ cscope add cscope.out
 set tags=tags,vendor.tags,pear.tags
 
 " map for cscope
-
 nmap <C-@>s :cscope find s <C-R>=expand("<cword>")<CR>
 nmap <C-@>g :cscope find g <C-R>=expand("<cword>")<CR>
 nmap <C-@>c :cscope find c <C-R>=expand("<cword>")<CR>
