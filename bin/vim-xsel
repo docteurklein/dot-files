@@ -1,0 +1,12 @@
+#!/bin/bash
+
+TMPFILE_DIR=/tmp/vim-xclip
+TMPFILE=$TMPFILE_DIR/doc-$(date +"%y%m%d%H%M%S")
+
+mkdir -p $TMPFILE_DIR
+touch $TMPFILE
+xsel -o > $TMPFILE
+
+chmod o-r $TMPFILE # Make file only readable by you
+gvim --nofork $TMPFILE
+cat $TMPFILE | xsel -i -b
