@@ -40,6 +40,13 @@
 			},
 			{
 				"name": "branch"
+			},
+			{
+				"name": "date",
+                "args": {
+                    "format": "%H:%M:%S",
+                    "istime": true
+                }
 			}
 		]
 	}
