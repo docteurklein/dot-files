@@ -245,7 +245,7 @@ nmap <C-@>c :cscope find c <C-R>=expand("<cword>")<CR>
 nmap <C-@>t :cscope find t <C-R>=expand("<cword>")<CR>
 nmap <C-@>e :cscope find e <C-R>=expand("<cword>")<CR>
 nmap <C-@>f :cscope find f <C-R>=expand("<cfile>")<CR>
-nmap <C-@>i :cscope find i ^<C-R>=expand("<cfile>")<CR>
+nmap <C-@>i :cscope find i <C-R>=expand("<cfile>")<CR>
 nmap <C-@>d :cscope find d <C-R>=expand("<cword>")<CR>
 
 

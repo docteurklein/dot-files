@@ -19,7 +19,7 @@ session:
                 -
                     cmd:
                         - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
-                        - tail -f app/logs/dev.log app/logs/test.log
+                        - tail -f app/logs/*.log
                     width: 20
                 -
                     cmd:
@@ -27,6 +27,5 @@ session:
                     height: 55
                 -
                     cmd:
-                        - 'if [ ! -f Guardfile ]; then guard init ctags-composer ; fi'
                         - guard
                     height: 20

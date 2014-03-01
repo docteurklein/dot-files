@@ -106,3 +106,9 @@
 [submodule "vim/bundle/php-cs-fixer"]
 	path = vim/bundle/php-cs-fixer
 	url = git://github.com/stephpy/vim-php-cs-fixer
+[submodule "vim/bundle/php-refactor"]
+	path = vim/bundle/php-refactor
+	url = git@github.com:beberlei/vim-php-refactor.git
+[submodule "vim/bundle/comma-object"]
+	path = vim/bundle/comma-object
+	url = git@github.com:austintaylor/vim-commaobject.git
