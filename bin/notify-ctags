@@ -1,0 +1,29 @@
+
+cd $1
+
+inotifywait -mr -e create -e modify -e delete -e attrib -e move app/config src spec web | while read file
+do
+    killall ctags
+    find app/config src spec web \
+        -type f \
+        -name '*.php' \
+        -o -name '*.css' \
+        -o -name '*.js' \
+        -o -name '*.twig' \
+        -o -name '*.yml' \
+        -o -name '*.xml' \
+    | ctags -f tags -L -
+done
+
+inotifywait -mr -e create -e modify -e delete -e attrib -e move app/config src spec web | while read file
+do
+    killall cscope
+    find app/config src spec web \
+        -type f \
+        -name '*.php' \
+    > cscope.files && cscope -b
+done
+
+inotifywait -mr -e create -e modify -e delete -e attrib -e move composer.* vendor | while read file
+    ctags -f vendor.tags vendor
+done
