@@ -8,7 +8,7 @@
 set nocompatible                " Use vim defaults
 filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 
-set rtp+=/home/florian/.local/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
 
 "
 " Coloration
