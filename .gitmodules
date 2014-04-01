@@ -33,7 +33,7 @@
 	url = http://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
-	url = http://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+	url = https://github.com/tobyS/pdv.git
 [submodule "vim/bundle/ragtag"]
 	path = vim/bundle/ragtag
 	url = http://github.com/tpope/vim-ragtag.git
@@ -112,3 +112,6 @@
 [submodule "vim/bundle/comma-object"]
 	path = vim/bundle/comma-object
 	url = git@github.com:austintaylor/vim-commaobject.git
+[submodule "vim/bundle/multiple-cursors"]
+	path = vim/bundle/multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git

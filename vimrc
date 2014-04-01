@@ -200,6 +200,8 @@ nnoremap 6 3<c-w>-
 nnoremap = 3<c-w>>
 nnoremap - 3<c-w><
 
+nnoremap <tab> <c-w><c-w>
+
 "command mode
 inoremap jj <Esc>
 inoremap <S-CR> <Esc>
@@ -282,7 +284,7 @@ map <S-Left> :bprevious<CR>
 "let g:ctrlp_map = '<leader>t'
 "nmap <leader>b :CtrlPBuffer<cr>
 let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_bottom = 1
 
 
 autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
