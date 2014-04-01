@@ -8,8 +8,6 @@ export PATH=$PATH:./bin
 export PATH=$PATH:./app
 export PATH=$PATH:./vendor/bin
 export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
-export GEM_HOME=~/.gem/ruby/gems
-export GEM_PATH=~/.gem/ruby/2.1.0/gems
 
 export EDITOR="vim"
 export BROWSER="chromium-browser"
@@ -18,4 +16,4 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
 
-eval "$(phpenv init -)"
+which phpenv > /dev/null && eval "$(phpenv init -)"

@@ -1,7 +1,8 @@
+#!/bin/bash
 
 cd $1
 
-inotifywait -mr -e create -e modify -e delete -e attrib -e move app/config src spec web | while read file
+inotifywait -mr -e create -e modify -e delete -e attrib -e move . @app/cache @app/logs composer.* vendor @vendor.tags @tags | while read file
 do
     killall ctags
     find app/config src spec web \
@@ -13,17 +14,14 @@ do
         -o -name '*.yml' \
         -o -name '*.xml' \
     | ctags -f tags -L -
-done
 
-inotifywait -mr -e create -e modify -e delete -e attrib -e move app/config src spec web | while read file
-do
     killall cscope
     find app/config src spec web \
         -type f \
         -name '*.php' \
     > cscope.files && cscope -b
+
+    #killall ctags
+    #ctags -f vendor.tags vendor
 done
 
-inotifywait -mr -e create -e modify -e delete -e attrib -e move composer.* vendor | while read file
-    ctags -f vendor.tags vendor
-done

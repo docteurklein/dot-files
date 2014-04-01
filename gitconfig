@@ -26,8 +26,8 @@
 [apply]
     whitespace = fix
 [alias]
-    up  = pull origin
     sup = submodule foreach "git pull || exit 0"
+    rc =  rebase --continue
     st  = status
     df  = diff
     co  = checkout
