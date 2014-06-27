@@ -10,9 +10,6 @@
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = http://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = http://github.com/chrismetcalf/vim-taglist.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
@@ -58,18 +55,12 @@
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = http://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = http://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
 	url = https://github.com/tpope/vim-abolish.git
 [submodule "vim/bundle/less"]
 	path = vim/bundle/less
 	url = git://github.com/lunaru/vim-less.git
-[submodule "vim/bundle/autotag"]
-	path = vim/bundle/autotag
-	url = git://github.com/vim-scripts/AutoTag.git
 [submodule "vim/bundle/twig"]
 	path = vim/bundle/twig
 	url = git://github.com/beyondwords/vim-twig.git
