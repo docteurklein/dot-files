@@ -56,7 +56,6 @@ set wildmode=list:longest           " BASH style completion
 set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif
 set undolevels=1000             " use many levels of undo
 set noundofile
-set mouse=a
 set cscopetag cst
 set csto=1
 set tags=tags,vendor.tags,pear.tags
