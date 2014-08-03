@@ -52,7 +52,7 @@ set sidescrolloff=5
 set hidden                          " Allow switch beetween modified buffers
 set backspace=indent,eol,start      " Improve backspacing
 set wildmenu                        " Better completion
-set wildmode=list:longest           " BASH style completion
+set wildmode=longest:full
 set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif
 set undolevels=1000             " use many levels of undo
 set noundofile
@@ -72,10 +72,9 @@ nmap <C-@>i :cscope find i <C-R>=expand("<cfile>")<CR>
 nmap <C-@>d :cscope find d <C-R>=expand("<cword>")<CR>
 
 
-" Explore tags for the word under the cursor
-"map <C-l> <C-]>
 " Explore tags list for the word under the cursor OR go directly to it if only one result
 map <C-l> g<C-]>
+map tt g<C-]>
 " Back to previous location after browsing tags
 map <C-h> <C-T>
 " Jump to next tag match
@@ -212,3 +211,19 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_php_checkers=['php']
 
 let g:LustyJugglerShowKeys = 0
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'

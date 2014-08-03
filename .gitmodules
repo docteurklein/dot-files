@@ -109,3 +109,9 @@
 [submodule "vim/bundle/handlebars"]
 	path = vim/bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "vim/bundle/camel-case-motion"]
+	path = vim/bundle/camel-case-motion
+	url = git@github.com:bkad/CamelCaseMotion.git
+[submodule "vim/bundle/neocomplete"]
+	path = vim/bundle/neocomplete
+	url = git@github.com:Shougo/neocomplete.vim.git

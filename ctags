@@ -4,9 +4,9 @@
 --extra=+f
 
 --langdef=file
---langmap=file:.html.twig.xml.yml.js.feature
+--langmap=file:.html.twig.xml.yml.js.css.feature.xliff.xlf
 
---php-kinds=cdfintv
+--php-kinds=cdfint
 
 --langdef=js
 --langmap=js:.js

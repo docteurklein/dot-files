@@ -2,7 +2,7 @@ session:
     name: <%= File.basename(Dir.getwd) %>
     windows:
         -
-            name: editor
+            name: vim
             splits:
                 - { cmd: vim }
             cmd_separator: "\n"
