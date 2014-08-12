@@ -1,31 +1,6 @@
-session:
-    name: <%= File.basename(Dir.getwd) %>
-    windows:
-        -
-            name: vim
-            splits:
-                - { cmd: vim }
-            cmd_separator: "\n"
-            with_env_var: false
-        -
-            name: shell
-            cmd_separator: "\n"
-            with_env_var: false
-            filters:
-                before: clear
-            splits:
-                -
-                    cmd: ~
-                -
-                    cmd:
-                        - 'if [ ! -f app/logs/dev.log ]; then touch app/logs/dev.log ; fi'
-                        - tail -f app/logs/*.log
-                    width: 20
-                -
-                    cmd:
-                        - php -S localhost:8080 -t web -d xdebug.cli_color=0
-                    height: 55
-                -
-                    cmd:
-                        - guard
-                    height: 20
+name: sf
+windows:
+    -
+        name: vim
+    -
+        name: shell

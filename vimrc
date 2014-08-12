@@ -56,8 +56,8 @@ set wildmode=longest:full
 set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif
 set undolevels=1000             " use many levels of undo
 set noundofile
-set cscopetag cst
-set csto=1
+"set cscopetag
+"set cscopetagorder=1
 set tags=tags,vendor.tags,pear.tags
 
 cscope add cscope.out
@@ -88,9 +88,9 @@ map <C-Tab> <C-W><C-W>
 map <S-Right> :bnext<CR>
 map <S-Left> :bprevious<CR>
 " do a grep search on the selected text
-vmap <leader>f y:grep -Rn "<C-r>""
+vmap <leader>f y:grep -r "<C-r>""
 " do a grep search on the word under cursor
-nmap <leader>f :grep -Rn "<C-r><C-w>"
+nmap <leader>f :grep -r "<C-r><C-w>"
 " search on php.net for current word
 command! Browse : ! xdg-open http://php.net/<cword>
 
@@ -227,3 +227,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+
+let g:php_refactor_command='php ~/bin/refactor.phar'
+let g:php_cs_fixer_path = '~/bin/php-cs-fixer.phar'
+

@@ -115,3 +115,6 @@
 [submodule "vim/bundle/neocomplete"]
 	path = vim/bundle/neocomplete
 	url = git@github.com:Shougo/neocomplete.vim.git
+[submodule "vim/bundle/php-refactoring"]
+	path = vim/bundle/php-refactoring
+	url = git@github.com:vim-php/vim-php-refactoring.git
