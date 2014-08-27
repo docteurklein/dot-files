@@ -43,8 +43,9 @@ set noswapfile                    " Use an SCM instead of swap files
 " Highlight current line/column
 set cursorline
 set cursorcolumn
-set completeopt=menuone
 set laststatus=2                   " Show the status line all the time
+set completeopt=menuone
+set pumheight=10
 set keywordprg=pman
 set nofoldenable
 set scrolloff=5
@@ -144,6 +145,9 @@ runtime ftplugin/man.vim
 match ErrorMsg '\s\+$'
 
 
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+set complete-=k complete+=k
+autocmd FileType gitcommit,markdown setlocal spell
 
 " Restore cursor position
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
