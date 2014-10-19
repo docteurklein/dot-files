@@ -9,7 +9,7 @@ URxvt*scrollBar           : false
 URxvt*borderLess          : false
 URxvt*transparent         : false
 URxvt*shading             : 10
-URxvt*tint                : white
+URxvt*tint                : black
 XTerm*scrollTtyOutput     : false
 XTerm*metaSendsEscape     : true
 Rxvt*geometry             : 110x35
