@@ -115,3 +115,6 @@
 [submodule "vim/bundle/php-refactoring"]
 	path = vim/bundle/php-refactoring
 	url = git@github.com:vim-php/vim-php-refactoring.git
+[submodule "vim/bundle/clojure-fireplace"]
+	path = vim/bundle/clojure-fireplace
+	url = git@github.com:tpope/vim-fireplace.git
