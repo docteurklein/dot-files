@@ -197,7 +197,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
 let g:Powerline_symbols = 'unicode'
-set rtp+=/usr/lib/python3.3/site-packages/powerline/bindings/vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
 if has('gui_running')
     set guifont=Droid\ Sans\ Mono\ For\ Powerline\ 15
     let g:Powerline_symbols = 'fancy'

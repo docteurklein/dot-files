@@ -55,22 +55,17 @@ bindkey "^[[4~" vi-end-of-line         # End
 bindkey '^[[5~' vi-backward-blank-word # Page Up
 bindkey '^[[6~' vi-forward-blank-word  # Page Down
 
-# TMUX
-if [ -n $DISPLAY ]
-then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
-
 for file in $HOME/.zsh/rc/*.rc; do
-        source $file
+    source $file
 done
 
-if [ -f /usr/share/zsh/site-contrib/powerline.zsh ]
-then
-    . /usr/share/zsh/site-contrib/powerline.zsh
-fi
-
+powerline-daemon -q
+#
+#if [ -f /usr/share/zsh/site-contrib/powerline.zsh ]
+#then
+#    . /usr/share/zsh/site-contrib/powerline.zsh
+#fi
+#
 if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]
 then
     . ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
