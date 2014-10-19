@@ -4,13 +4,14 @@ export PATH=$PATH:~/.phpenv/bin
 export PATH=$PATH:~/.phpenv/shims
 export PATH=$PATH:~/.gem/bin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.composer/vendor/bin
 export PATH=$PATH:./bin
 export PATH=$PATH:./app
 export PATH=$PATH:./vendor/bin
 export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 
 export EDITOR="vim"
-export BROWSER="chromium-browser"
+export BROWSER="firefox"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000

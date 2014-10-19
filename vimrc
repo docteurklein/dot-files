@@ -7,6 +7,7 @@ let mapleader=","               " Use the comma as leader
 set nocompatible                " Use vim defaults
 filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 call pathogen#infect()
+Helptags
 filetype on
 filetype indent on
 filetype plugin on
@@ -46,7 +47,6 @@ set cursorcolumn
 set laststatus=2                   " Show the status line all the time
 set completeopt=menuone
 set pumheight=10
-set keywordprg=pman
 set nofoldenable
 set scrolloff=5
 set sidescrolloff=5
