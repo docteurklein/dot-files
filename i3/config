@@ -30,9 +30,9 @@ workspace_layout stacking
 assign [class="Thunderbird"] 2
 assign [class="HipChat"] 2
 
-# start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-
+bindsym $mod+t exec i3-sensible-terminal
+bindsym $mod+i exec firefox "${@}"
 # kill focused window
 bindsym $mod+Shift+a kill
 
