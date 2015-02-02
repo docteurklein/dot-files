@@ -50,4 +50,4 @@
 [mergetool]
 	prompt = false
 [commit]
-	gpgsign = true
+	gpgsign = false
