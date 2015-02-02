@@ -1,5 +1,5 @@
 xset +fp /usr/share/fonts/TTF/
 
 setxkbmap fr
-exec gnome-session
+exec i3
 #exec ck-launch-session urxvt

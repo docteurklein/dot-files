@@ -1,8 +1,9 @@
 [user]
     name = Klein Florian
     email = florian.klein@free.fr
+	signingkey = E5C3F3FC
 [core]
-    autocrlf = false
+	autocrlf = input
     ui = true
     editor = vim
     whitespace = trailing-space,space-before-tab,tab-in-indent
@@ -33,7 +34,7 @@
     co  = checkout
     cm  = commit
     ctags = !.git/hooks/ctags
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     sa = "! f() { git submodule add git@github.com:$2.git $1; }; f"
 [init]
     templatedir = ~/.git_template
@@ -48,3 +49,5 @@
 	conflictstyle = diff3
 [mergetool]
 	prompt = false
+[commit]
+	gpgsign = true

@@ -96,8 +96,8 @@ nmap <leader>f :grep -r "<C-r><C-w>"
 " search on php.net for current word
 command! Browse : ! xdg-open http://php.net/<cword>
 
-cmap w!! w ! sudo tee % > /dev/null
-
+command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+cabbrev w!! W
 
 " Faster viewport scrolling
 nnoremap <C-e> 3<C-e>
@@ -159,8 +159,8 @@ autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-au   InsertEnter   *   hi   CursorLine   gui=bold   cterm=bold
-au   InsertLeave   *   hi   CursorLine   gui=none   cterm=none
+"au   InsertEnter   *   hi   CursorLine   gui=bold   cterm=bold
+"au   InsertLeave   *   hi   CursorLine   gui=none   cterm=none
 
 highlight link SyntasticStyleErrorSign SyntasticStyleWarningSign
 highlight link SyntasticStyleErrorLine SyntasticStyleWarningLine

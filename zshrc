@@ -71,7 +71,4 @@ then
     . ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
-source $HOME/.aliases
-
-# added by travis gem
-[ -f /home/florian/.travis/travis.sh ] && source /home/florian/.travis/travis.sh
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

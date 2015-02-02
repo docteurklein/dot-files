@@ -32,9 +32,17 @@ assign [class="HipChat"] 2
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec i3-sensible-terminal
-bindsym $mod+i exec firefox "${@}"
+bindsym $mod+i exec chromium "${@}"
+bindsym $mod+n exec nautilus "${@}"
+bindsym $mod+p exec popcorntime "${@}"
+bindsym $mod+m exec thunderbird "${@}"
+bindsym $mod+x exec xkill
+bindsym $mod+s exec gnome-screenshot -apf /tmp/shot.png
+bindsym $mod+v exec /home/florian/.bin/vim-xsel
+
 # kill focused window
 bindsym $mod+Shift+a kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -44,11 +52,12 @@ bindsym $mod+Shift+a kill
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 
 # volume
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- '-5%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+5%'
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- '-10%'
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+10%'
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0
 
-exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-scale /home/florian/images/wallpaper
 
 # change focus
 bindsym $mod+h focus left
@@ -78,15 +87,15 @@ bindsym $mod+Shift+Right move right
 #bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+#bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+z layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -95,7 +104,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+# bindsym $mod+q focus parent
 
 # focus the child container
 #bindsym $mod+d focus child

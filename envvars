@@ -1,20 +1,21 @@
-export PATH=$PATH:~/bin
-export PATH=$PATH:~/local/bin
-export PATH=$PATH:~/.phpenv/bin
-export PATH=$PATH:~/.phpenv/shims
-export PATH=$PATH:~/.gem/bin
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/.composer/vendor/bin
-export PATH=$PATH:./bin
-export PATH=$PATH:./app
-export PATH=$PATH:./vendor/bin
-export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
+export PATH=~/bin:$PATH
+export PATH=~/local/bin:$PATH
+export PATH=~/.local/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
+export PATH=~/workspace/go/bin:$PATH
+export PATH=./node_modules/.bin:$PATH
+export PATH=./vendor/bin:$PATH
+export PATH=./bin:$PATH
+export PATH=./app:$PATH
+export PATH=./:$PATH
+
+export GOPATH=~/workspace/go
 
 export EDITOR="vim"
-export BROWSER="firefox"
+export SYSTEMD_EDITOR=vim
+export BROWSER="chromium"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
-
-which phpenv > /dev/null && eval "$(phpenv init -)"
