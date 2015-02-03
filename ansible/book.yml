@@ -9,26 +9,31 @@
               shell=/usr/bin/zsh
               update_password=on_create
         ignore_errors: yes
+
       - lineinfile: dest=/etc/sudoers
                     state=present
                     line='florian ALL=(ALL) NOPASSWD:ALL'
                     validate='visudo -cf %s'
 
       - lineinfile: 'dest=/etc/pacman.conf line="{{ item }}"'
+
         with_items:
             - '[archlinuxfr]'
             - 'SigLevel = Never'
             - 'Server = http://repo.archlinux.fr/$arch'
       - file: dest=/etc/modprobe.d/nobeep.conf state=touch
+
       - lineinfile: line="blacklist pcspkr" dest=/etc/modprobe.d/nobeep.conf
+
       - pacman: update_cache=yes
+
       - pacman: name={{ item }}
         with_items:
             - yaourt
             - wget
             - git
             - tmux
-            - vim
+            - gvim
             - thunderbird
             - nodejs
             - unzip
@@ -37,19 +42,50 @@
             - pulseaudio
             - openssh
             - youtube-dl
+            - postgresql
+            - php
+            - php-pgsql
+            - ctags
+            - ruby
+      - lineinfile: dest=/etc/php/php.ini
+                    state=absent
+                    regexp='^open_basedir'
+
+      - lineinfile: "dest=/etc/php/php.ini state=present line='{{ item }}'"
+        with_items:
+            - extension=pdo_mysql.so
+            - extension=pdo_pgsql.so
+            - extension=posix.so
+            - date.timezone=UTC
+
+      - command: 'yaourt -S --noconfirm hipchat'
+        sudo: no
+
       - copy: src=files/getty@tty1.service
               dest=/etc/systemd/system/getty@tty1.service.d/override.conf
+
       - service: name=dhcpcd enabled=yes state=started
+
       - copy: 'content="{{ public }}" dest=~/.ssh/id_rsa.pub mode=0600'
         sudo_user: florian
+        when: public is defined
+
       - copy: 'content="{{ private }}" dest=~/.ssh/id_rsa mode=0600'
         sudo_user: florian
-      - git: repo=git@github.com:docteurklein/dot-files.git
-             dest=~/dot-files
+        when: private is defined
+
+      - stat: path=~/dot-files
+        register: dot-files
         sudo_user: florian
-      - shell: for f in $(ls -1 ~/dot-files); do ln -s ~/dot-files/$f ~/.$f; done
+
+      - git: repo=git@github.com:docteurklein/dot-files.git dest=~/dot-files
+        when: dot-files.stat.exists == True
+        sudo_user: florian
+
+      - shell: 'for f in $(ls -1 ~/dot-files); do ln -s ~/dot-files/$f ~/.$f; done'
         ignore_errors: yes
         sudo_user: florian
+
       - pip: name='git+git://github.com/powerline/powerline'
         ignore_errors: yes
 
