@@ -16,14 +16,16 @@
                     validate='visudo -cf %s'
 
       - lineinfile: 'dest=/etc/pacman.conf line="{{ item }}"'
-
         with_items:
             - '[archlinuxfr]'
             - 'SigLevel = Never'
             - 'Server = http://repo.archlinux.fr/$arch'
-      - file: dest=/etc/modprobe.d/nobeep.conf state=touch
 
+      - file: dest=/etc/modprobe.d/nobeep.conf state=touch
       - lineinfile: line="blacklist pcspkr" dest=/etc/modprobe.d/nobeep.conf
+
+      - file: dest=/etc/modprobe.d/acpi.conf state=touch
+      - lineinfile: line="button" dest=/etc/modprobe.d/acpi.conf
 
       - pacman: update_cache=yes
 
@@ -47,6 +49,15 @@
             - php-pgsql
             - ctags
             - ruby
+            - chromium
+            - acpi
+
+      - command: 'yaourt -S --noconfirm {{ item }}'
+        with_items:
+            - hipchat
+            - jq
+            - pasystray
+
       - lineinfile: dest=/etc/php/php.ini
                     state=absent
                     regexp='^open_basedir'
@@ -57,8 +68,6 @@
             - extension=pdo_pgsql.so
             - extension=posix.so
             - date.timezone=UTC
-
-      - command: 'yaourt -S --noconfirm hipchat'
         sudo: no
 
       - copy: src=files/getty@tty1.service
