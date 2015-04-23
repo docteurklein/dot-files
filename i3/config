@@ -38,6 +38,7 @@ bindsym $mod+p exec popcorntime "${@}"
 bindsym $mod+m exec thunderbird "${@}"
 bindsym $mod+x exec xkill
 bindsym $mod+s exec gnome-screenshot -apf /tmp/shot.png
+bindsym $mod+shift+s exec /home/florian/.bin/screencast
 bindsym $mod+v exec /home/florian/.bin/vim-xsel
 
 # kill focused window
