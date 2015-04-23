@@ -2,6 +2,7 @@ source $HOME/.envvars
 
 eval `dircolors -b`
 
+autoload -U +X bashcompinit && bashcompinit
 autoload -U promptinit
 promptinit
 prompt clint
@@ -60,15 +61,5 @@ for file in $HOME/.zsh/rc/*.rc; do
 done
 
 powerline-daemon -q
-#
-#if [ -f /usr/share/zsh/site-contrib/powerline.zsh ]
-#then
-#    . /usr/share/zsh/site-contrib/powerline.zsh
-#fi
-#
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]
-then
-    . ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

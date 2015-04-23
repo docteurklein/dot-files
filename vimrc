@@ -24,7 +24,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set list
-set listchars=eol:↩,trail:‧,tab:▸▸
+"set listchars=eol:↩,trail:‧,tab:▸▸
 set encoding=utf-8
 set fileencoding=utf-8
 set history=1000                " Increase history
@@ -55,7 +55,7 @@ set hidden                          " Allow switch beetween modified buffers
 set backspace=indent,eol,start      " Improve backspacing
 set wildmenu                        " Better completion
 set wildmode=longest:full
-set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif
+set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc
 set undolevels=1000             " use many levels of undo
 set noundofile
 "set cscopetag
@@ -140,6 +140,9 @@ vnoremap <down>  <nop>
 vnoremap <left>  <nop>
 vnoremap <right> <nop>
 
+noremap Q <nop>
+noremap gQ <nop>
+
 runtime ftplugin/man.vim
 
 " display trailing whitespace as error
@@ -203,7 +206,7 @@ python powerline_setup()
 python del powerline_setup
 
 if has('gui_running')
-    set guifont=Droid\ Sans\ Mono\ For\ Powerline\ 15
+    set guifont=Monaco\ For\ Powerline\ 15
     let g:Powerline_symbols = 'fancy'
 endif
 

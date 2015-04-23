@@ -36,8 +36,6 @@
     ctags = !.git/hooks/ctags
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     sa = "! f() { git submodule add git@github.com:$2.git $1; }; f"
-[init]
-    templatedir = ~/.git_template
 [rerere]
     enabled = 1
 [push]

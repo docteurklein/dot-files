@@ -51,12 +51,17 @@
             - ruby
             - chromium
             - acpi
+            - ntp
 
       - command: 'yaourt -S --noconfirm {{ item }}'
+        sudo: no
         with_items:
             - hipchat
             - jq
-            - pasystray
+            - pasystray-git
+            - otf-powerline-symbols-git
+            - ttf-droid-min
+            - vim-airline
 
       - lineinfile: dest=/etc/php/php.ini
                     state=absent
@@ -68,12 +73,14 @@
             - extension=pdo_pgsql.so
             - extension=posix.so
             - date.timezone=UTC
-        sudo: no
 
       - copy: src=files/getty@tty1.service
               dest=/etc/systemd/system/getty@tty1.service.d/override.conf
 
-      - service: name=dhcpcd enabled=yes state=started
+      - service: name={{ item }} enabled=yes state=started
+        with_items:
+            - dhcpcd
+            - ntpd
 
       - copy: 'content="{{ public }}" dest=~/.ssh/id_rsa.pub mode=0600'
         sudo_user: florian

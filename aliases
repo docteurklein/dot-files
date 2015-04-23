@@ -1,4 +1,4 @@
-alias ll='ls -Al --color=auto -F'
+alias ll='ls -Alh --color=auto -F'
 alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'

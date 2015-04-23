@@ -2,3 +2,4 @@
 \pset linestyle unicode
 \pset border 3
 \pset null '*** NULL ***'
+\pset pager always

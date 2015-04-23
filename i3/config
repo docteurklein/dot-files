@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Droid Sans Mono 11
+font pango:DejaVu Sans Mono 11
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -28,7 +28,6 @@ floating_modifier $mod
 workspace_layout stacking
 
 assign [class="Thunderbird"] 2
-assign [class="HipChat"] 2
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec i3-sensible-terminal
@@ -40,6 +39,7 @@ bindsym $mod+x exec xkill
 bindsym $mod+s exec gnome-screenshot -apf /tmp/shot.png
 bindsym $mod+shift+s exec /home/florian/.bin/screencast
 bindsym $mod+v exec /home/florian/.bin/vim-xsel
+bindsym $mod+shift+h exec chromium --app=https://knplabs622.hipchat.com/chat
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -111,28 +111,28 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+quotedbl workspace 1
+bindsym $mod+guillemotleft workspace 2
+bindsym $mod+guillemotright workspace 3
+bindsym $mod+parenleft workspace 4
+bindsym $mod+parenright workspace 5
+bindsym $mod+at workspace 6
+bindsym $mod+plus workspace 7
+bindsym $mod+minus workspace 8
+bindsym $mod+slash workspace 9
+bindsym $mod+asterisk workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
+bindsym $mod+Shift+quotedbl move container to workspace 1
+bindsym $mod+Shift+guillemotleft move container to workspace 2
+bindsym $mod+Shift+guillemotright move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+minus move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+at move container to workspace 6
+bindsym $mod+Shift+plus move container to workspace 7
+bindsym $mod+Shift+minus move container to workspace 8
+bindsym $mod+Shift+slash move container to workspace 9
+bindsym $mod+Shift+asterisk move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

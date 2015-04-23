@@ -1,3 +1,6 @@
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export PATH=~/bin:$PATH
 export PATH=~/local/bin:$PATH
 export PATH=~/.local/bin:$PATH
@@ -10,14 +13,15 @@ export PATH=./bin:$PATH
 export PATH=./app:$PATH
 export PATH=./:$PATH
 export GOPATH=~/workspace/go
-export EDITOR="vim"
+export EDITOR=vim
+export PAGER=less
 export SYSTEMD_EDITOR=vim
-export BROWSER="chromium"
+export BROWSER=chromium
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
 
-alias ll='ls -Al --color=auto -F'
+alias ll='ls -Alh --color=auto -F'
 alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -30,13 +34,22 @@ alias grc='git rebase --continue'
 alias gco='git checkout'
 alias sf='console'
 alias sfp='console -e=prod --no-debug'
-alias composer='composer.phar'
-alias ci='composer install --dev --prefer-dist'
-alias cu='composer update --dev --prefer-dist'
+alias ci='composer install --prefer-dist'
+alias cu='composer update --prefer-dist'
 alias cr='composer require'
 alias gn='git log --reverse --format=%H HEAD..ORIG_HEAD | head -1 | xargs git checkout'
 alias gp='git checkout HEAD~'
 alias start='sudo systemctl restart'
+alias stop='sudo systemctl stop'
 alias pcat='pygmentize -f terminal256 -O style=native -g'
 alias tm='tmux new -s $(basename $(pwd))'
 alias l="xbacklight -set"
+alias ya="yaourt --noconfirm"
+alias dc="docker-compose"
+alias dcl="docker-compose logs"
+alias dcp="docker-compose ps"
+alias dcu="docker-compose up -d"
+alias dcu-nd="docker-compose up -d --no-deps"
+alias dcu-nr="docker-compose up -d --no-recreate"
+alias dcr="docker-compose run --rm"
+alias drm="docker ps -qa | xargs docker rm -fv"
