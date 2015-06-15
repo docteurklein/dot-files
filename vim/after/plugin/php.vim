@@ -5,5 +5,3 @@ syntax match phpspecExampleDelimiter "_" conceal cchar=  contained containedin=p
 
 setlocal conceallevel=2
 
-nmap <leader>s :NeoCompleteLock <CR> :set completefunc=CompleteSymfony <CR>
-nmap <leader>S :NeoCompleteUnlock <CR>

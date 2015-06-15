@@ -25,7 +25,6 @@ bindkey   "^[[A"    up-line-or-beginning-search
 bindkey   "^[[B"    down-line-or-beginning-search
 
 setopt histignorealldups
-setopt autocd
 setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
 setopt extendedglob
 setopt vi
@@ -42,6 +41,7 @@ setopt nolisttypes
 setopt completeinword
 setopt alwaystoend
 setopt correct
+setopt inc_append_history
 
 bindkey "^xe" edit-command-line
 bindkey "^x^e" edit-command-line
@@ -59,7 +59,5 @@ bindkey '^[[6~' vi-forward-blank-word  # Page Down
 for file in $HOME/.zsh/rc/*.rc; do
     source $file
 done
-
-powerline-daemon -q
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
