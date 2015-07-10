@@ -170,5 +170,5 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command python2 /home/florian/.local/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | lemonbar -b -d
 }

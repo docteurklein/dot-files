@@ -1,0 +1,9 @@
+{
+	"groups": {
+		"temperature": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
+		"workspaces": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
+		"w_focused": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
+		"w_visible": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
+		"workspace": {"fg": "darkblue",   "bg": "gray0",    "attrs": []}
+	}
+}
