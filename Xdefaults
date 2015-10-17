@@ -21,8 +21,8 @@ URxvt.clipboard.pastecmd: xsel -ob
 *.tint                : black
 *.scrollTtyOutput     : false
 *.metaSendsEscape     : true
-*.geometry             : 110x35
-*.vt100.geometry      : 79x25
+
+URxvt*geometry: 97x39
 
 Xft.antialias             : true
 Xft.hinting               : true
@@ -84,6 +84,4 @@ URxvt.font: xft:DejaVu Sans Mono For Powerline:size=15
 *.keysym.C-Right : \033[1;5C
 *.keysym.C-Left  : \033[1;5D
 
-*.iso14755: false
-*.iso14755_52: false
 

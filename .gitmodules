@@ -27,7 +27,7 @@
 	url = git@github.com:arnaud-lb/vim-php-namespace.git
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
-	url = http://github.com/godlygeek/tabular.git
+	url = git@github.com:godlygeek/tabular.git
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
 	url = https://github.com/tobyS/pdv.git
@@ -139,3 +139,9 @@
 [submodule "vim/bundle/coffee-cjsx"]
 	path = vim/bundle/coffee-cjsx
 	url = git@github.com:mtscout6/vim-cjsx.git
+[submodule "vim/bundle/auto-mkdir"]
+	path = vim/bundle/auto-mkdir
+	url = git@github.com:travisjeffery/vim-auto-mkdir.git
+[submodule "vim/bundle/qfdo"]
+	path = vim/bundle/qfdo
+	url = git@github.com:karlbright/qfdo.vim.git

@@ -8,3 +8,4 @@ tags
 vendor.tags
 pear.tags
 Guardfile
+.tmux.conf

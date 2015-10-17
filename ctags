@@ -1,12 +1,15 @@
 --totals=yes
---tag-relative=yes
 --recurse
 --extra=+f
+--exclude=.git
 
 --langdef=file
---langmap=file:.html.twig.xml.yml.js.css.feature.xliff.xlf
+--langmap=file:.html.twig.xml.yml.js.css.feature.xliff.xlf.sql
 
---php-kinds=cdfint
+--php-kinds=cdfi
+--python-kinds=-i
+--fields=n
+
 
 --langdef=js
 --langmap=js:.js
@@ -26,8 +29,6 @@
 --regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*(true|false)/\2/,boolean/
 --regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[0-9]+/\2/,number/
 --regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[^=]+([,;]|$)/\2/,variable/
-
---python-kinds=-i
 
 --languages=php,file,js,python
 

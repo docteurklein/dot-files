@@ -1,6 +1,6 @@
-source $HOME/.envvars
-
 eval `dircolors -b`
+
+stty -ixon
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U promptinit
@@ -56,8 +56,18 @@ bindkey "^[[4~" vi-end-of-line         # End
 bindkey '^[[5~' vi-backward-blank-word # Page Up
 bindkey '^[[6~' vi-forward-blank-word  # Page Down
 
-for file in $HOME/.zsh/rc/*.rc; do
-    source $file
-done
-
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+# case-insensitive (uppercase from lowercase) completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# process completion
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
+
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
+

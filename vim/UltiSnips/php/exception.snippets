@@ -1,0 +1,12 @@
+snippet th "throw"
+throw new ${1}Exception${2};
+endsnippet
+
+snippet try "try"
+try {
+    ${1};
+}
+catch (${2:\Exception} $e) {
+    ${3};
+}
+endsnippet

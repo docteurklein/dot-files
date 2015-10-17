@@ -24,7 +24,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set list
-"set listchars=eol:↩,trail:‧,tab:▸▸
+set listchars=nbsp:¬,eol:↩,trail:‧,tab:▸▸
 set encoding=utf-8
 set fileencoding=utf-8
 set history=1000                " Increase history
@@ -54,7 +54,7 @@ set sidescrolloff=5
 set hidden                          " Allow switch beetween modified buffers
 set backspace=indent,eol,start      " Improve backspacing
 set wildmenu                        " Better completion
-set wildmode=longest:full
+set wildmode=list:longest
 set wildignore=.git,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc
 set undolevels=1000             " use many levels of undo
 set noundofile
@@ -77,6 +77,7 @@ nmap <C-@>d :cscope find d <C-R>=expand("<cword>")<CR>
 " Explore tags list for the word under the cursor OR go directly to it if only one result
 map <C-l> g<C-]>
 map tt g<C-]>
+map TT <C-T>
 " Back to previous location after browsing tags
 map <C-h> <C-T>
 " Jump to next tag match
@@ -89,6 +90,10 @@ map <leader>lp :LustyJugglePrevious<cr>
 map <C-Tab> <C-W><C-W>
 map <S-Right> :bnext<CR>
 map <S-Left> :bprevious<CR>
+
+"set grepprg=ag\ --nogroup\ --nocolor
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
 " do a grep search on the selected text
 vmap <leader>f y:grep -r "<C-r>""
 " do a grep search on the word under cursor
@@ -117,7 +122,7 @@ nnoremap <tab> <c-w><c-w>
 
 "command mode
 inoremap jj <Esc>
-inoremap <S-CR> <Esc>
+inoremap :w <Esc>:w<cr>
 
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
@@ -158,7 +163,6 @@ autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '
 autocmd BufReadPost fugitive://* set bufhidden=delete
 " Remove trailing whitespaces and ^M chars
 autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
-autocmd BufWrite * :call <SID>MkdirsIfNotExists(expand('<afile>:h'))
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -168,23 +172,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 highlight link SyntasticStyleErrorSign SyntasticStyleWarningSign
 highlight link SyntasticStyleErrorLine SyntasticStyleWarningLine
 
-
-function! <SID>MkdirsIfNotExists(directory)
-    if(!isdirectory(a:directory))
-        call mkdir(a:directory, 'p')
-    endif
-endfunction
-
-
-" Processing results in quickfix http://efiquest.org/2009-02-19/32/
-com! -nargs=1 Qfdo try | sil cfirst |
-\ while 1 | exec <q-args> | sil cn | endwhile |
-\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
-\ endtry
-com! -nargs=1 Qfdofile try | sil cfirst |
-\ while 1 | exec <q-args> | sil cnf | endwhile |
-\ catch /^Vim\%((\a\+)\)\=:E\%(553\|42\):/ |
-\ endtry
+highlight SpecialKey guibg=Red ctermbg=9
 
 "let g:ctrlp_map = '<leader>t'
 nmap <leader>b :CtrlPBuffer<cr>
@@ -200,10 +188,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
-let g:Powerline_symbols = 'unicode'
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"let g:Powerline_symbols = 'unicode'
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 if has('gui_running')
     set guifont=Monaco\ For\ Powerline\ 15
@@ -222,4 +210,5 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_php_checkers=['php']
 
 let g:LustyJugglerShowKeys = 0
-
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tmuxline#enabled = 0

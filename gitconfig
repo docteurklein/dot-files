@@ -49,3 +49,5 @@
 	prompt = false
 [commit]
 	gpgsign = false
+[diff "nodiff"]
+	command = /bin/true
