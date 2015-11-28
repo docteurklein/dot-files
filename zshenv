@@ -1,8 +1,8 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export PATH=~/bin:$PATH
-export PATH=~/local/bin:$PATH
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+export PATH=~/.bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
@@ -47,12 +47,10 @@ alias tm='tmux attach -t $(basename $(pwd)) || tmux new -s $(basename $(pwd))'
 alias tmf='tmux new -s $(basename $(pwd)) tmux source-file .tmux.conf'
 alias l="xbacklight -set"
 alias ya="yaourt --noconfirm"
-alias dc="docker-compose"
+alias dc="docker-compose --x-networking"
 alias dcl="docker-compose logs"
 alias dcp="docker-compose ps"
-alias dcu="docker-compose up -d"
-alias dcu-nd="docker-compose up -d --no-deps"
-alias dcu-nr="docker-compose up -d --no-recreate"
+alias dcu="docker-compose --x-networking up -d"
 alias dcr="docker-compose run --rm"
 alias de="docker exec -it"
 alias drm="docker ps -qa | xargs docker rm -fv"
