@@ -31,6 +31,7 @@
 
       - pacman: name={{ item }}
         with_items:
+            - xorg-xinit
             - yaourt
             - wget
             - git
@@ -44,9 +45,6 @@
             - pulseaudio
             - openssh
             - youtube-dl
-            - postgresql
-            - php
-            - php-pgsql
             - ctags
             - ruby
             - chromium
@@ -56,31 +54,23 @@
       - command: 'yaourt -S --noconfirm {{ item }}'
         sudo: no
         with_items:
-            - hipchat
-            - jq
             - pasystray-git
             - otf-powerline-symbols-git
             - ttf-droid-min
             - vim-airline
-
-      - lineinfile: dest=/etc/php/php.ini
-                    state=absent
-                    regexp='^open_basedir'
-
-      - lineinfile: "dest=/etc/php/php.ini state=present line='{{ item }}'"
-        with_items:
-            - extension=pdo_mysql.so
-            - extension=pdo_pgsql.so
-            - extension=posix.so
-            - date.timezone=UTC
+            - python-powerline
+            - pulseaudio-ctl
+        tags: [yaourt]
 
       - copy: src=files/getty@tty1.service
               dest=/etc/systemd/system/getty@tty1.service.d/override.conf
+        tags: [login]
 
       - service: name={{ item }} enabled=yes state=started
         with_items:
             - dhcpcd
             - ntpd
+        tags: [services]
 
       - copy: 'content="{{ public }}" dest=~/.ssh/id_rsa.pub mode=0600'
         sudo_user: florian
@@ -101,7 +91,4 @@
       - shell: 'for f in $(ls -1 ~/dot-files); do ln -s ~/dot-files/$f ~/.$f; done'
         ignore_errors: yes
         sudo_user: florian
-
-      - pip: name='git+git://github.com/powerline/powerline'
-        ignore_errors: yes
 
