@@ -91,7 +91,7 @@ map <C-Tab> <C-W><C-W>
 map <S-Right> :bnext<CR>
 map <S-Left> :bprevious<CR>
 
-"set grepprg=ag\ --nogroup\ --nocolor
+set grepprg=ag\ --nogroup\ --nocolor
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 " do a grep search on the selected text
@@ -122,7 +122,7 @@ nnoremap <tab> <c-w><c-w>
 
 "command mode
 inoremap jj <Esc>
-inoremap :w <Esc>:w<cr>
+nnoremap VV :w<cr>
 
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
@@ -161,8 +161,6 @@ autocmd FileType gitcommit,markdown setlocal spell
 " Restore cursor position
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
-" Remove trailing whitespaces and ^M chars
-autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -194,7 +192,7 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 "python del powerline_setup
 
 if has('gui_running')
-    set guifont=Monaco\ For\ Powerline\ 15
+    set guifont=Deja Vu Sans Mono\ For\ Powerline\ 15
     let g:Powerline_symbols = 'fancy'
 endif
 

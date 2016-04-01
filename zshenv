@@ -15,12 +15,15 @@ export PATH=./:$PATH
 export GOPATH=~/workspace/go
 export EDITOR=vim
 export PAGER=less
-export LESS="-iMSx4 -FXr"
+export LESS="-iMSx4 -FXR"
 export SYSTEMD_EDITOR=vim
 export BROWSER=chromium
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
+export COMPOSE_PROJECT_NAME=$(basename $(pwd))
+
+dce() { docker exec -it "${COMPOSE_PROJECT_NAME}_${1}_1" ${@:2} }
 
 alias ll='ls -Alh --color=auto -F'
 alias gs='git status'
@@ -47,13 +50,15 @@ alias tm='tmux attach -t $(basename $(pwd)) || tmux new -s $(basename $(pwd))'
 alias tmf='tmux new -s $(basename $(pwd)) tmux source-file .tmux.conf'
 alias l="xbacklight -set"
 alias ya="yaourt --noconfirm"
-alias dc="docker-compose --x-networking"
+alias dc="docker-compose"
 alias dcl="docker-compose logs"
 alias dcp="docker-compose ps"
-alias dcu="docker-compose --x-networking up -d"
+alias dcu="docker-compose up -d"
 alias dcr="docker-compose run --rm"
 alias de="docker exec -it"
+alias ds="docker ps --format '{{ .Names }}'|xargs docker stats"
 alias drm="docker ps -qa | xargs docker rm -fv"
 alias myip="curl http://ipecho.net/plain ; echo"
 alias dm="docker-machine"
 alias r="phpspec run"
+alias s="sudo -E systemctl"

@@ -11,15 +11,15 @@
 
 set $mod Mod4
 
-font pango:DejaVu Sans Mono 11
+font pango:DejaVu Sans Mono For Powerline 11
 
 floating_modifier $mod
-workspace_layout stacking
+workspace_layout tabbed
 assign [class="Thunderbird"] 2
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec i3-sensible-terminal
-bindsym $mod+i exec chromium "${@}"
+bindsym $mod+i exec chromium --disk-cache-dir=/tmp/cache "${@}"
 bindsym $mod+n exec nautilus "${@}"
 bindsym $mod+m exec thunderbird "${@}"
 bindsym $mod+x exec xkill
@@ -45,7 +45,7 @@ bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+10%'
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0
 
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill /home/florian/images/wallpaper
+exec --no-startup-id feh --bg-max /home/florian/images/wallpaper
 
 # change focus
 bindsym $mod+h focus left

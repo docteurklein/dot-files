@@ -32,7 +32,7 @@ Xft.hintstyle             : hintfull
 *.colorIT             : green
 
 ! black
-*.color0              : #000000
+*.color0              : #111111
 *.color8              : #555555
 ! red
 *.color1              : #AA0000

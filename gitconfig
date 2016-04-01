@@ -51,3 +51,4 @@
 	gpgsign = false
 [diff "nodiff"]
 	command = /bin/true
+[filter "lfs"]
