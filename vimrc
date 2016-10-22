@@ -1,9 +1,9 @@
-
 let mapleader=","               " Use the comma as leader
 
 " auto reload the config file after modifications
 " autocmd BufWrite $MYVIMRC source $MYVIMRC
 
+set exrc
 set nocompatible                " Use vim defaults
 filetype off                    " deactivate filetype for pathogen to load snipmate correctly
 call pathogen#infect()
@@ -24,7 +24,7 @@ set shiftwidth=4
 set autoindent
 set smartindent
 set list
-set listchars=nbsp:¬,eol:↩,trail:‧,tab:▸▸
+set listchars=nbsp:¬,eol:↩,trail:…,tab:▸▸
 set encoding=utf-8
 set fileencoding=utf-8
 set history=1000                " Increase history

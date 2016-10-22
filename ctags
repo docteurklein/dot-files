@@ -1,10 +1,9 @@
 --totals=yes
 --recurse
---extra=+f
 --exclude=.git
-
+--extra=+f
 --langdef=file
---langmap=file:.html.twig.xml.yml.js.css.feature.xliff.xlf.sql.exs.ex
+--langmap=file:.eex.html.twig.xml.yml.js.css.feature.xliff.xlf.sql
 
 --php-kinds=cdfi
 --python-kinds=-i
@@ -43,6 +42,8 @@
 --regex-Elixir=/^[ \t]*defprotocol[ \t]+([A-Z][a-zA-Z0-9_]*\.)*([A-Z][a-zA-Z0-9_?!]*)/\2/p,protocols,protocols (defprotocol...)/
 --regex-Elixir=/^[ \t]*Record\.defrecord[ \t]+:([a-zA-Z0-9_]+)/\1/r,records,records (defrecord...)/
 --regex-Elixir=/^[ \t]*test[ \t]+\"([a-z_][a-zA-Z0-9_?! ]*)\"*/\1/t,tests,tests (test ...)/
+
+--regex-php=/Twig(_Simple)?(Function|Filter|Test)\(['"]([A-Za-z0-9_$]+)['"]/\3/
 
 --languages=php,file,js,python,Elixir
 

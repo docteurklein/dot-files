@@ -1,0 +1,17 @@
+snippet if "if"
+{% if ${1} %}
+    ${2}
+{% endif %}
+endsnippet
+
+snippet for "for"
+{% for ${1} in ${2} %}
+    ${3}
+{% endfor %}
+endsnippet
+
+snippet bl "twig block"
+{% block ${1} %}
+${2}
+{% endblock $1 %}
+endsnippet

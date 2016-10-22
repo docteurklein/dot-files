@@ -23,8 +23,6 @@ export HISTSIZE=500000
 export SAVEHIST=500000
 export COMPOSE_PROJECT_NAME=$(basename $(pwd))
 
-dce() { docker exec -it "${COMPOSE_PROJECT_NAME}_${1}_1" ${@:2} }
-
 alias ll='ls -Alh --color=auto -F'
 alias gs='git status'
 alias gd='git diff'
@@ -51,14 +49,18 @@ alias tmf='tmux new -s $(basename $(pwd)) tmux source-file .tmux.conf'
 alias l="xbacklight -set"
 alias ya="yaourt --noconfirm"
 alias dc="docker-compose"
-alias dcl="docker-compose logs"
+alias dcl="docker-compose logs -f --tail=0"
 alias dcp="docker-compose ps"
 alias dcu="docker-compose up -d"
+alias dce="docker-compose exec"
 alias dcr="docker-compose run --rm"
 alias de="docker exec -it"
+alias denv='env|grep "DOCKER\|COMPOSE"'
 alias ds="docker ps --format '{{ .Names }}'|xargs docker stats"
 alias drm="docker ps -qa | xargs docker rm -fv"
 alias myip="curl http://ipecho.net/plain ; echo"
 alias dm="docker-machine"
 alias r="phpspec run"
 alias s="sudo -E systemctl"
+alias du1="du -h --max-depth=1"
+alias du2="du -h --max-depth=2"

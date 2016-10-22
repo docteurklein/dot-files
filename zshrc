@@ -70,3 +70,6 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 
+
+# added by travis gem
+[ -f /home/florian/.travis/travis.sh ] && source /home/florian/.travis/travis.sh

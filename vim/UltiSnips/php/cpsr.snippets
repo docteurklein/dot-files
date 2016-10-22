@@ -1,5 +1,5 @@
 snippet cpsr "PSR0 class"
-<?php
+<?php declare(strict_types=1);
 
 namespace ${3:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
 
