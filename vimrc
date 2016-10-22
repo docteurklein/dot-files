@@ -14,6 +14,7 @@ filetype plugin on
 syntax on
 
 set t_Co=256
+"set termguicolors
 colorscheme jellybeans
 let g:jellybeans_use_lowcolor_black = 0
 
@@ -192,7 +193,7 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 "python del powerline_setup
 
 if has('gui_running')
-    set guifont=Deja Vu Sans Mono\ For\ Powerline\ 15
+    set guifont=DejaVu\ Sans\ Mono\ For\ Powerline\ 15
     let g:Powerline_symbols = 'fancy'
 endif
 
