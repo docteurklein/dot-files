@@ -5,9 +5,6 @@ let mapleader=","               " Use the comma as leader
 
 set exrc
 set nocompatible                " Use vim defaults
-filetype off                    " deactivate filetype for pathogen to load snipmate correctly
-call pathogen#infect()
-Helptags
 filetype on
 filetype indent on
 filetype plugin on

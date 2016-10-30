@@ -1,147 +1,90 @@
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
+[submodule "vim/pack/default/start/fugitive"]
+	path = vim/pack/default/start/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
+[submodule "vim/pack/default/start/lusty"]
+	path = vim/pack/default/start/lusty
 	url = http://github.com/sjbach/lusty.git
-[submodule "vim/bundle/markdown"]
-	path = vim/bundle/markdown
+[submodule "vim/pack/default/start/markdown"]
+	path = vim/pack/default/start/markdown
 	url = http://github.com/tpope/vim-markdown.git
-[submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
+[submodule "vim/pack/default/start/surround"]
+	path = vim/pack/default/start/surround
 	url = http://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
+[submodule "vim/pack/default/start/syntastic"]
+	path = vim/pack/default/start/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/gitv"]
-	path = vim/bundle/gitv
+[submodule "vim/pack/default/start/gitv"]
+	path = vim/pack/default/start/gitv
 	url = http://github.com/gregsexton/gitv.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = http://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/vim-aldmeris"]
-	path = vim/bundle/vim-aldmeris
-	url = http://github.com/veloce/vim-aldmeris.git
-[submodule "vim/bundle/vim-php-namespace"]
-	path = vim/bundle/vim-php-namespace
+[submodule "vim/pack/default/start/vim-php-namespace"]
+	path = vim/pack/default/start/vim-php-namespace
 	url = git@github.com:arnaud-lb/vim-php-namespace.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
+[submodule "vim/pack/default/start/tabular"]
+	path = vim/pack/default/start/tabular
 	url = git@github.com:godlygeek/tabular.git
-[submodule "vim/bundle/pdv"]
-	path = vim/bundle/pdv
-	url = https://github.com/tobyS/pdv.git
-[submodule "vim/bundle/ragtag"]
-	path = vim/bundle/ragtag
+[submodule "vim/pack/default/start/ragtag"]
+	path = vim/pack/default/start/ragtag
 	url = http://github.com/tpope/vim-ragtag.git
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
+[submodule "vim/pack/default/start/matchit"]
+	path = vim/pack/default/start/matchit
 	url = http://github.com/vim-scripts/matchit.zip.git
-[submodule "vim/bundle/php-getter-setter"]
-	path = vim/bundle/php-getter-setter
-	url = http://github.com/docteurklein/php-getter-setter.vim.git
-[submodule "vim/bundle/vim-symfony"]
-	path = vim/bundle/vim-symfony
+[submodule "vim/pack/default/start/vim-symfony"]
+	path = vim/pack/default/start/vim-symfony
 	url = http://github.com/docteurklein/vim-symfony.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
+[submodule "vim/pack/default/start/ctrlp"]
+	path = vim/pack/default/start/ctrlp
 	url = http://github.com/kien/ctrlp.vim
-[submodule "vim/bundle/behat"]
-	path = vim/bundle/behat
+[submodule "vim/pack/default/start/behat"]
+	path = vim/pack/default/start/behat
 	url = http://github.com/veloce/vim-behat.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
+[submodule "vim/pack/default/start/powerline"]
+	path = vim/pack/default/start/powerline
 	url = http://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/abolish"]
-	path = vim/bundle/abolish
+[submodule "vim/pack/default/start/abolish"]
+	path = vim/pack/default/start/abolish
 	url = https://github.com/tpope/vim-abolish.git
-[submodule "vim/bundle/less"]
-	path = vim/bundle/less
-	url = git://github.com/lunaru/vim-less.git
-[submodule "vim/bundle/twig"]
-	path = vim/bundle/twig
+[submodule "vim/pack/default/start/twig"]
+	path = vim/pack/default/start/twig
 	url = git://github.com/beyondwords/vim-twig.git
-[submodule "vim/bundle/phpspec"]
-	path = vim/bundle/phpspec
+[submodule "vim/pack/default/start/phpspec"]
+	path = vim/pack/default/start/phpspec
 	url = git://github.com/Herzult/phpspec-vim.git
-[submodule "vim/bundle/vdebug"]
-	path = vim/bundle/vdebug
+[submodule "vim/pack/default/start/vdebug"]
+	path = vim/pack/default/start/vdebug
 	url = git://github.com/joonty/vdebug.git
-[submodule "vim/bundle/git-gutter"]
-	path = vim/bundle/git-gutter
+[submodule "vim/pack/default/start/git-gutter"]
+	path = vim/pack/default/start/git-gutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
+[submodule "vim/pack/default/start/ultisnips"]
+	path = vim/pack/default/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "vim/bundle/php54-syntax"]
-	path = vim/bundle/php54-syntax
-	url = git://github.com/donnut/vim-php54-syntax.git
 [submodule "git_template/hooks/composer-check"]
 	path = git_template/hooks/composer-check
 	url = git://gist.github.com/5867424.git
-[submodule "vim/bundle/phpcomplete"]
-	path = vim/bundle/phpcomplete
-	url = git://github.com/shawncplus/phpcomplete.vim.git
-[submodule "vim/bundle/delimitate"]
-	path = vim/bundle/delimitate
+[submodule "vim/pack/default/start/delimitate"]
+	path = vim/pack/default/start/delimitate
 	url = git://github.com/Raimondi/delimitMate.git
-[submodule "vim/bundle/bulkfill"]
-	path = vim/bundle/bulkfill
-	url = git://github.com/vim-scripts/bufkill.vim.git
-[submodule "vim/bundle/easymotion"]
-	path = vim/bundle/easymotion
+[submodule "vim/pack/default/start/easymotion"]
+	path = vim/pack/default/start/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/bundle/php-cs-fixer"]
-	path = vim/bundle/php-cs-fixer
-	url = git://github.com/stephpy/vim-php-cs-fixer
-[submodule "vim/bundle/php-refactor"]
-	path = vim/bundle/php-refactor
-	url = git@github.com:beberlei/vim-php-refactor.git
-[submodule "vim/bundle/comma-object"]
-	path = vim/bundle/comma-object
+[submodule "vim/pack/default/start/comma-object"]
+	path = vim/pack/default/start/comma-object
 	url = git@github.com:austintaylor/vim-commaobject.git
-[submodule "vim/bundle/multiple-cursors"]
-	path = vim/bundle/multiple-cursors
-	url = git@github.com:terryma/vim-multiple-cursors.git
-[submodule "vim/bundle/handlebars"]
-	path = vim/bundle/handlebars
-	url = git://github.com/nono/vim-handlebars.git
-[submodule "vim/bundle/camel-case-motion"]
-	path = vim/bundle/camel-case-motion
+[submodule "vim/pack/default/start/camel-case-motion"]
+	path = vim/pack/default/start/camel-case-motion
 	url = git@github.com:bkad/CamelCaseMotion.git
-[submodule "vim/bundle/neocomplete"]
-	path = vim/bundle/neocomplete
-	url = git@github.com:Shougo/neocomplete.vim.git
-[submodule "vim/bundle/php-refactoring"]
-	path = vim/bundle/php-refactoring
-	url = git@github.com:vim-php/vim-php-refactoring.git
-[submodule "vim/bundle/clojure-fireplace"]
-	path = vim/bundle/clojure-fireplace
-	url = git@github.com:tpope/vim-fireplace.git
-[submodule "vim/bundle/jellybeans"]
-	path = vim/bundle/jellybeans
+[submodule "vim/pack/default/start/jellybeans"]
+	path = vim/pack/default/start/jellybeans
 	url = git@github.com:nanotech/jellybeans.vim.git
-[submodule "vim/bundle/coffee-script"]
-	path = vim/bundle/coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/bundle/jade"]
-	path = vim/bundle/jade
-	url = git://github.com/digitaltoad/vim-jade.git
-[submodule "vim/bundle/editorconfig"]
-	path = vim/bundle/editorconfig
+[submodule "vim/pack/default/start/editorconfig"]
+	path = vim/pack/default/start/editorconfig
 	url = git@github.com:editorconfig/editorconfig-vim.git
-[submodule "vim/bundle/cjsx"]
-	path = vim/bundle/cjsx
-	url = git@github.com:mtscout6/vim-cjsx.git
-[submodule "vim/bundle/coffee"]
-	path = vim/bundle/coffee
-	url = git@github.com:kchmck/vim-coffee-script.git
-[submodule "vim/bundle/coffee-cjsx"]
-	path = vim/bundle/coffee-cjsx
-	url = git@github.com:mtscout6/vim-cjsx.git
-[submodule "vim/bundle/auto-mkdir"]
-	path = vim/bundle/auto-mkdir
+[submodule "vim/pack/default/start/auto-mkdir"]
+	path = vim/pack/default/start/auto-mkdir
 	url = git@github.com:travisjeffery/vim-auto-mkdir.git
-[submodule "vim/bundle/qfdo"]
-	path = vim/bundle/qfdo
+[submodule "vim/pack/default/start/qfdo"]
+	path = vim/pack/default/start/qfdo
 	url = git@github.com:karlbright/qfdo.vim.git
+[submodule "vim/pack/default/start/gitgutter"]
+	path = vim/pack/default/start/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
