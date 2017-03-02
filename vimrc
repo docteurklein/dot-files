@@ -61,6 +61,8 @@ set noundofile
 set tags=tags,vendor.tags,pear.tags
 
 cscope add cscope.out
+cscope add cscope.vendor.out
+set cscopequickfix=s+ " populate the quickfix list
 " map for cscope
 nmap <C-@>s :cscope find s <C-R>=expand("<cword>")<CR>
 nmap <C-@>g :cscope find g <C-R>=expand("<cword>")<CR>
@@ -70,6 +72,7 @@ nmap <C-@>e :cscope find e <C-R>=expand("<cword>")<CR>
 nmap <C-@>f :cscope find f <C-R>=expand("<cfile>")<CR>
 nmap <C-@>i :cscope find i <C-R>=expand("<cfile>")<CR>
 nmap <C-@>d :cscope find d <C-R>=expand("<cword>")<CR>
+nmap <C-@>a :cscope find a <C-R>=expand("<cword>")<CR>
 
 
 " Explore tags list for the word under the cursor OR go directly to it if only one result

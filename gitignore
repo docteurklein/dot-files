@@ -1,11 +1,8 @@
 .idea
-.tags
-.phpcomplete_extended
 cscope.*
-Session.vim
 node_modules
+vendor
 tags
 vendor.tags
-pear.tags
 .tmux.conf
 .exrc

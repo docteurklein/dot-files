@@ -1,18 +1,15 @@
-# vim: set ft=ruby
+# vim: ft=ruby
 
 guard :shell do
-  watch(%r{^(app/config|src|spec|web)}) {
-    `killall ctags`
-    `rm tags`
-    `find app/config src spec web -type f -name '*.php' -o -name '*.css' -o -name '*.js' -o -name '*.twig' -o -name '*.yml' -o -name '*.xml' | ctags -f tags -L -`
-  }
-  watch(%r{^(app/config|src|spec|web)}) {
-    `killall cscope`
-    `find app/config src spec web vendor -type f -name '*.php' -o -name '*.twig' -o -name '*.yml' -o -name '*.xml' > cscope.files && cscope -b`
-  }
-  watch('composer.lock') {
-    `killall ctags`
-    `rm vendor.tags`
+  watch /^(src|spec|features|tests)/ do
+    `ctags -f tags src spec features tests`
+    `find src spec features tests -type f -name '*.php' > cscope.files`
+    `cscope -b`
+  end
+
+  watch /^composer/ do
     `ctags -f vendor.tags vendor`
-  }
+    `find vendor -type f -name '*.php' > cscope.vendor.files`
+    `cscope -b -i cscope.vendor.files -f cscope.vendor.out`
+  end
 end
