@@ -1,20 +1,18 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
+export LD_PRELOAD="/usr/lib/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin
 export PATH=~/.bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 export PATH=~/workspace/go/bin:$PATH
-export PATH=./node_modules/.bin:$PATH
-export PATH=./vendor/bin:$PATH
-export PATH=./bin:$PATH
-export PATH=./app:$PATH
-export PATH=./:$PATH
 export GOPATH=~/workspace/go
 export EDITOR=vim
 export PAGER=less
+export LESS="-SR"
 export SYSTEMD_EDITOR=vim
 export BROWSER=chromium
 export HISTFILE=~/.zsh_history
@@ -61,3 +59,9 @@ alias r="phpspec run"
 alias s="sudo -E systemctl"
 alias du1="du -h --max-depth=1"
 alias du2="du -h --max-depth=2"
+alias d="docker"
+
+function dse {
+    local args=${*:2}
+    de $(docker ps -q --filter label=com.docker.swarm.service.name=$1) $args
+}

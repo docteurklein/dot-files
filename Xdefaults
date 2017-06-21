@@ -56,7 +56,7 @@ Xft.hintstyle             : hintfull
 *.color7              : #AAAAAA
 
 *.initialFont: 6
-URxvt.font: xft:DejaVu Sans Mono For Powerline:size=15
+URxvt.font: xft:DejaVu Sans Mono For Powerline:size=12
 
 ! Control
 *.keysym.C-F1        : \033[1;5P

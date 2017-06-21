@@ -21,12 +21,6 @@
             - 'SigLevel = Never'
             - 'Server = http://repo.archlinux.fr/$arch'
 
-      - file: dest=/etc/modprobe.d/nobeep.conf state=touch
-      - lineinfile: line="blacklist pcspkr" dest=/etc/modprobe.d/nobeep.conf
-
-      - file: dest=/etc/modprobe.d/acpi.conf state=touch
-      - lineinfile: line="button" dest=/etc/modprobe.d/acpi.conf
-
       - pacman: update_cache=yes
 
       - pacman: name={{ item }}
@@ -44,22 +38,16 @@
             - docker
             - pulseaudio
             - openssh
-            - youtube-dl
             - ctags
             - ruby
             - chromium
-            - acpi
             - ntp
 
       - command: 'yaourt -S --noconfirm {{ item }}'
         sudo: no
         with_items:
-            - pasystray-git
-            - otf-powerline-symbols-git
-            - ttf-droid-min
             - vim-airline
             - python-powerline
-            - pulseaudio-ctl
         tags: [yaourt]
 
       - copy: src=files/getty@tty1.service
