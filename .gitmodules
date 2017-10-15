@@ -88,3 +88,6 @@
 [submodule "vim/pack/default/start/gitgutter"]
 	path = vim/pack/default/start/gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "vim/pack/default/start/elm-lang"]
+	path = vim/pack/default/start/elm-lang
+	url = https://github.com/ElmCast/elm-vim.git

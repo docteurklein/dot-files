@@ -61,3 +61,7 @@ alias r="phpspec run"
 alias s="sudo -E systemctl"
 alias du1="du -h --max-depth=1"
 alias du2="du -h --max-depth=2"
+
+function duh {
+    du -h --max-depth=${2-1} $1 | sort -hr
+}

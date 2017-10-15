@@ -65,4 +65,12 @@
 --langmap=gherkin:.feature
 --regex-gherkin=/(given|and|when|then) (.*)/\2/i
 
---languages=php,file,python,elixir,twig,gherkin,yml
+--langdef=elm
+--langmap=elm:.elm
+--regex-elm=/^ *([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:].*->.*/\1/f,function,functions/
+--regex-elm=/^ *([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:][^-]+$/\1/c,constant,constants/
+--regex-elm=/^port +([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:]/\1/p,port,ports/
+--regex-elm=/^type +([[:upper:]][[:alnum:]_]+)/\1/t,type,types/
+--regex-elm=/^type[[:blank:]]+alias[[:blank:]]+([[:upper:]][[:alnum:]_]+)/\1/a,type-alias,type-aliases/
+
+--languages=php,file,python,elixir,twig,gherkin,yml,elm

@@ -200,14 +200,21 @@ endif
 " Syntastic
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
+"let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_balloons = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_php_checkers=['php']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:elm_syntastic_show_warnings = 1
 
 let g:LustyJugglerShowKeys = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tmuxline#enabled = 0
+
+let g:loaded_sql_completion = 0
+let g:omni_sql_no_default_maps = 1
+
