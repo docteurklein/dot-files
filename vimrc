@@ -92,7 +92,7 @@ map <C-Tab> <C-W><C-W>
 map <S-Right> :bnext<CR>
 map <S-Left> :bprevious<CR>
 
-set grepprg=ag\ --nogroup\ --nocolor
+set grepprg=ag\ --nogroup\ --nocolor\ -r
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 " do a grep search on the selected text

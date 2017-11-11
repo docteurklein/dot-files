@@ -34,7 +34,7 @@ setopt histreduceblanks
 setopt histignorespace
 setopt SH_WORD_SPLIT
 setopt automenu
-setopt cdablevars
+#setopt cdablevars
 setopt nohup
 setopt listpacked
 setopt nolisttypes

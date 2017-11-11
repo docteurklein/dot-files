@@ -26,7 +26,6 @@ bindsym $mod+x exec xkill
 bindsym $mod+s exec gnome-screenshot -apf /tmp/shot.png
 bindsym $mod+shift+s exec /home/florian/.bin/screencast
 bindsym $mod+v exec /home/florian/.bin/vim-xsel
-bindsym $mod+shift+h exec chromium --app=https://knplabs622.hipchat.com/chat
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -36,12 +35,9 @@ bindsym $mod+Shift+a kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show drun -modi combi"
 
 # volume
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- '-10%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+10%'
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0
 
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-max /home/florian/images/wallpaper
@@ -161,6 +157,27 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    #status_command python2 /home/florian/.local/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | lemonbar -b -d
     status_command i3status
+    position top
+    mode hide
+    hidden_state hide
+    modifier Mod1
 }
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
