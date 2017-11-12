@@ -1,10 +1,21 @@
-Installation 
+Installation
 ============
 
-    qemu-system-x86_64 -m 512 -enable-kvm
-    -boot d -cdrom ~/Downloads/archlinux-2017.06.01-x86_64.iso
-    -hda mydisk.img
-    -virtfs local,path=/home/florian/dot-files,mount_tag=host0,security_model=passthrough,id=host0
+## on a host
+
+    qemu-img create mydisk.img 2G
+
+    qemu-system-x86_64 -enable-kvm \
+    -m 1024 \
+    -drive format=raw,file=$HOME/Downloads/archlinux.iso \
+    -drive format=raw,file=mydisk.img \
+    -virtfs local,path=/$HOME,mount_tag=host0,security_model=passthrough,id=host0
+
+# in the VM
+
+    mkdir /dot && mount -t 9p -o trans=virtio host0 /dot
+    cd /dot
+    ./install -u florian -i /dot/.ssh/id_rsa -b /dev/sdb -p /dev/sdb1
 
 Clone the repository:
 

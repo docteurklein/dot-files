@@ -3,13 +3,9 @@
 set -exuo pipefail
 
 OPTIND=1
-destroy=false
 
 while getopts "b:p:u:i:d" opt; do
     case "$opt" in
-        d)  destroy=true
-            echo "will destroy partition!" >&2
-            ;;
         i)  identity=$OPTARG
             echo "identity: $identity" >&2
             ;;
@@ -39,48 +35,45 @@ main() {
     loadkeys fr-bepo
     timedatectl set-ntp true
 
-    $destroy && prepare_disk $block $partition
+    prepare_disk $block $partition
     mount $partition /mnt
 
-    [ ! $destroy ] && packages
+    packages
 
     genfstab -U /mnt > /mnt/etc/fstab
     echo 'en_US.UTF-8 UTF-8' > /mnt/etc/locale.gen
     echo 'LANG=en_US.UTF-8' > /mnt/etc/locale.conf
-    echo 'KEYMAP=fr-latin1' > /mnt/etc/vconsole.conf
+    echo 'KEYMAP=fr-bepo' > /mnt/etc/vconsole.conf
 
     mkdir -p /mnt/home/$username/.ssh
-    cp $identity /mnt/home/$username/.ssh/
-    cp $identity.pub /mnt/home/$username/.ssh/
+    cp $identity /mnt/home/$username/.ssh/id_rsa
+    cp $identity.pub /mnt/home/$username/.ssh/id_rsa.pub
 
     arch-chroot /mnt ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
     arch-chroot /mnt hwclock --systohc
     arch-chroot /mnt locale-gen
-    $destroy && arch-chroot /mnt grub-install --target=i386-pc $block
-    $destroy && arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+    arch-chroot /mnt grub-install --target=i386-pc $block
+    arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
     arch-chroot /mnt passwd
 
-    arch-chroot /mnt id $username || useradd -m -s /usr/bin/zsh $username && passwd $username
-    arch-chroot /mnt echo "$username ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-    arch-chroot /mnt echo "${username}-laptop" > /etc/hostname
-    arch-chroot /mnt chown -R $username:$username /home/$username/.ssh
+    arch-chroot /mnt sh -c "id $username || useradd -m -s /usr/bin/zsh $username && passwd $username"
+    echo "$username ALL=(ALL) NOPASSWD:ALL" >> /mnt/etc/sudoers
+    echo "${username}-laptop" > /mnt/etc/hostname
+    arch-chroot /mnt chown -R $username:$username /home/$username
     arch-chroot /mnt chmod 0644 /home/$username/.ssh/id_rsa.pub
     arch-chroot /mnt chmod 0400 /home/$username/.ssh/id_rsa
 
     arch-chroot /mnt sudo -u $username git clone git@github.com:docteurklein/dot-files.git /home/florian/dot-files
-    arch-chroot /mnt sudo -u $username cd /home/$username/dot-files && for f in $(ls -1 /home/$username/dot-files); do ln -s ~/dot-files/\$f \~/.\$f; done
+    arch-chroot /mnt sudo -u $username sh -c "cd /home/$username/dot-files && sh symlink.sh"
 
-    arch-chroot /mnt systemctl enable --now dhcpcd
-    arch-chroot /mnt systemctl enable --now ntpd
-    arch-chroot /mnt systemctl enable --now wpa_supplicant
-    arch-chroot /mnt configure_autologin $username
-    arch-chroot /mnt exit
-EOL
+    arch-chroot /mnt systemctl enable dhcpcd
+    arch-chroot /mnt systemctl enable ntpd
+    arch-chroot /mnt systemctl enable wpa_supplicant
+    configure_autologin $username
 }
 
 packages() {
-    pacstrap /mnt \
-        base
+    pacstrap /mnt base
     configure_pacman
     pacstrap /mnt \
         base-devel ntp dhcpcd grub \
@@ -88,13 +81,18 @@ packages() {
         xorg-server xorg-xinit xsel \
         pulseaudio \
         docker \
-        i3 \
+        i3 rofi \
         tmux zsh rxvt-unicode gvim git \
-        chromium \
         noto-fonts \
-        #yaourt
+        expac \
+        openssh
 
-    #yaourt -S ttf-dejavu-sans-mono-powerline-git
+    arch-chroot /mnt pacman -Syy yaourt
+
+    arch-chroot /mnt yaourt -S \
+        stderred-git \
+        otf-powerline-symbols-git \
+        ttf-dejavu-sans-mono-powerline-git
 }
 
 configure_pacman() {
@@ -107,7 +105,7 @@ configure_pacman() {
 
 configure_autologin() {
     declare username=$1
-    dest=/etc/systemd/system/getty@tty1.service.d/override.conf
+    dest=/mnt/etc/systemd/system/getty@tty1.service.d/override.conf
     mkdir -p $(dirname $dest)
     cat > $dest <<EOL
     [Service]
