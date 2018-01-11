@@ -92,7 +92,7 @@ map <C-Tab> <C-W><C-W>
 map <S-Right> :bnext<CR>
 map <S-Left> :bprevious<CR>
 
-set grepprg=ag\ --nogroup\ --nocolor\ -r
+"set grepprg=ag\ --nogroup\ --nocolor\ -r
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 " do a grep search on the selected text
@@ -123,7 +123,7 @@ nnoremap <tab> <c-w><c-w>
 
 "command mode
 inoremap jj <Esc>
-nnoremap VV :w<cr>
+"nnoremap VV :w<cr>
 
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
@@ -193,7 +193,7 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 "python del powerline_setup
 
 if has('gui_running')
-    set guifont=DejaVu\ Sans\ Mono\ For\ Powerline\ 15
+    set guifont=DejaVu\ Sans\ Mono\ For\ Powerline\ 12
     let g:Powerline_symbols = 'fancy'
 endif
 

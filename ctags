@@ -7,7 +7,7 @@
 
 --extra=+f
 --langdef=file
---langmap=file:.eex.html.twig.xml.yml.js.css.feature.xliff.xlf.sql
+--langmap=file:.eex.html.xml.css.xliff.xlf.sql
 
 --php-kinds=cdfi
 --regex-php=/Twig(_Simple)?(Function|Filter|Test)\(['"]([A-Za-z0-9_$]+)['"]/\3/
@@ -59,7 +59,7 @@
 
 --langdef=yml
 --langmap=yml:.yml
---regex-yml=/^(\w*):/\1/i
+--regex-yml=/^\s*(.*):/\1/i
 
 --langdef=gherkin
 --langmap=gherkin:.feature
@@ -73,4 +73,4 @@
 --regex-elm=/^type +([[:upper:]][[:alnum:]_]+)/\1/t,type,types/
 --regex-elm=/^type[[:blank:]]+alias[[:blank:]]+([[:upper:]][[:alnum:]_]+)/\1/a,type-alias,type-aliases/
 
---languages=php,file,python,elixir,twig,gherkin,yml,elm
+--languages=php,file,python,elixir,twig,gherkin,yml,elm,js

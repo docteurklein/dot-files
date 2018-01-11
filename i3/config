@@ -40,7 +40,7 @@ bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show drun -mo
 # volume
 
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-max /home/florian/images/wallpaper
+exec --no-startup-id feh --bg-fill /home/florian/images/wallpaper
 
 # change focus
 bindsym $mod+h focus left

@@ -48,6 +48,7 @@
 	conflictstyle = diff3
 [mergetool]
 	prompt = false
+	keepBackup = false
 [commit]
 	gpgsign = false
 [diff "nodiff"]

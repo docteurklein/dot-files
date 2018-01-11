@@ -91,3 +91,6 @@
 [submodule "vim/pack/default/start/ale"]
 	path = vim/pack/default/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/pack/default/start/airline"]
+	path = vim/pack/default/start/airline
+	url = https://github.com/vim-airline/vim-airline.git

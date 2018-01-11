@@ -3,3 +3,4 @@ lighttpd/conf.d/vhosts.conf
 tags
 vendor.tags
 Guardfile
+config

@@ -7,24 +7,24 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin
 export PATH=~/.bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
+export PATH=bin:vendor/bin:$PATH
 export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 export PATH=~/workspace/go/bin:$PATH
 export GOPATH=~/workspace/go
 export EDITOR=vim
 export PAGER=less
-export LESS="-SR"
+export LESS="-SRXFi"
 export SYSTEMD_EDITOR=vim
 export BROWSER=chromium
 export HISTFILE=~/.zsh_history
 export HISTSIZE=500000
 export SAVEHIST=500000
-export COMPOSE_PROJECT_NAME=$(basename $(pwd))
 
 alias ll='ls -Alh --color=auto -F'
 alias g='git'
 alias gs='git status'
 alias gd='git diff'
-alias gdc='git diff --cached'
+alias gds='git diff --staged'
 alias grh='git reset HEAD'
 alias gc='git commit'
 alias gph='git push'
@@ -67,3 +67,16 @@ function dse {
     local args=${*:2}
     de $(docker ps -q --filter label=com.docker.swarm.service.name=$1) $args
 }
+
+function tldr {
+    curl "https://api.github.com/repos/tldr-pages/tldr/contents/pages/common/$1.md?ref=master" | jq -r '.content' | base64 -d - | markdown-cli
+}
+
+function composer-autoload {
+    local script=$(cat <<JQ
+        .autoload."psr-4" |= . + {"$1": "$2"}
+JQ
+)
+    cat composer.json | jq --indent 4 "$script" | tee composer.json > /dev/null && composer dump-autoload
+}
+
