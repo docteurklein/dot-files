@@ -2,10 +2,13 @@
     "default_module": "powerline.segments.common",
     "segments": {
         "right": [
-			{
-				"function": "powerline.segments.common.time.date",
-				"priority": 40
-			}
+            {
+                "function": "powerline.segments.common.time.date",
+                "args": {
+                    "format": "%A u'%Y-%m-%d"
+                },
+                "priority": 40
+            }
         ]
     }
 }

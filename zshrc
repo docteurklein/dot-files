@@ -7,9 +7,27 @@ autoload -U promptinit
 promptinit
 prompt clint
 
-PROMPT="%F{green}%~%F 
-%F{yellow}%(?..[%?%1v] )%(2v.%U%2v%u.)
-%f%B %#%b "
+function prompt() {
+    export PROMPT="%F{green}%~%f $(test -d .git && echo "@$(git symbolic-ref --short HEAD) ($(git rev-parse --short HEAD))")
+%F{yellow}[%? ${1}ms]
+%fλ "
+}
+
+prompt 0
+
+function preexec() {
+  timer=$(($(date +%s%N)/1000000))
+}
+
+function precmd() {
+  if [ $timer ]; then
+    now=$(($(date +%s%N)/1000000))
+    elapsed=$(($now-$timer))
+
+    prompt $elapsed
+    unset timer
+  fi
+}
 
 autoload -U compinit
 compinit
@@ -40,7 +58,7 @@ setopt listpacked
 setopt nolisttypes
 setopt completeinword
 setopt alwaystoend
-setopt correct
+#setopt correct
 setopt inc_append_history
 
 bindkey "^xe" edit-command-line
@@ -73,3 +91,9 @@ zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 
 # added by travis gem
 [ -f /home/florian/.travis/travis.sh ] && source /home/florian/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/florian/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/home/florian/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/florian/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/florian/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

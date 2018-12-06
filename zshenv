@@ -1,15 +1,17 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export LD_PRELOAD="/usr/lib/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+export LD_PRELOAD="/usr/lib/libstderred.so"
 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin/core_perl:/usr/bin
 export PATH=~/.bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
+export PATH=node_modules/.bin:$PATH
 export PATH=bin:vendor/bin:$PATH
-export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
+#export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 export PATH=~/workspace/go/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 export GOPATH=~/workspace/go
 export EDITOR=vim
 export PAGER=less
@@ -41,26 +43,30 @@ alias pcat='pygmentize -f terminal256 -O style=native -g'
 alias tm='tmux attach -t $(basename $(pwd)) || tmux new -s $(basename $(pwd))'
 alias tmf='tmux new -s $(basename $(pwd)) tmux source-file .tmux.conf'
 alias l="xbacklight -set"
-alias ya="yaourt --noconfirm"
+alias ya="yaourt --noconfirm --color --pager"
 alias dc="docker-compose"
-alias dcl="docker-compose logs -f --tail=10"
+alias dcl="docker-compose logs -f --tail=100"
 alias dcp="docker-compose ps"
 alias dcu="docker-compose up -d"
 alias dcr="docker-compose run --rm"
 alias dce="docker-compose exec"
 alias de="docker exec -it"
-alias denv='env|grep "DOCKER\|COMPOSE"'
-alias ds="docker ps --format '{{ .Names }}'|xargs docker stats"
+alias denv='env|grep -e DOCKER -e COMPOSE'
+alias ds="docker ps --format '{{ .Names }}' | xargs docker stats --format 'table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}\t{{.PIDs}}'"
+alias dcs="docker-compose ps -q | xargs docker stats --format 'table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}\t{{.PIDs}}'"
 alias dr="docker run --rm -it"
 alias drm="docker ps -qa | xargs docker rm -fv"
 alias myip="curl http://ipecho.net/plain ; echo"
 alias dm="docker-machine"
 alias r="phpspec run"
 alias s="sudo -E systemctl"
+alias j="sudo -E journalctl"
 alias d="docker"
+alias k="kubectl"
+alias ytj="ruby -ryaml -rjson -e 'puts JSON.generate(YAML.load(ARGF))'"
 
 function duh {
-    du -h --max-depth=${2-1} $1 | sort -hr
+    du -h --max-depth=${2-1} "$1" | sort -hr
 }
 
 function dse {
@@ -69,7 +75,7 @@ function dse {
 }
 
 function tldr {
-    curl "https://api.github.com/repos/tldr-pages/tldr/contents/pages/common/$1.md?ref=master" | jq -r '.content' | base64 -d - | markdown-cli
+    curl -sL "https://api.github.com/repos/tldr-pages/tldr/contents/pages/common/$1.md?ref=master" | jq -r '.content' | base64 -d - | markdown-cli
 }
 
 function composer-autoload {
@@ -80,3 +86,6 @@ JQ
     cat composer.json | jq --indent 4 "$script" | tee composer.json > /dev/null && composer dump-autoload
 }
 
+function devip {
+    ip -4 a show dev $1 | grep -Po 'inet \K[\d.]+'
+}

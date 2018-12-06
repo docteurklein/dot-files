@@ -16,8 +16,8 @@ URxvt.clipboard.pastecmd: xsel -ob
 *.scrollBar_right     : false
 *.scrollBar           : false
 *.borderLess          : false
-*.transparent         : false
-*.shading             : 10
+*.transparent         : true
+*.shading             : 30
 *.tint                : black
 *.scrollTtyOutput     : false
 *.metaSendsEscape     : true
@@ -56,7 +56,7 @@ Xft.hintstyle             : hintfull
 *.color7              : #AAAAAA
 
 *.initialFont: 6
-URxvt.font: xft:DejaVu Sans Mono For Powerline:size=12
+URxvt.font: xft:DejaVu Sans Mono For Powerline:size=13
 
 ! Control
 *.keysym.C-F1        : \033[1;5P

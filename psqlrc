@@ -3,3 +3,4 @@
 \pset border 3
 \pset null '*** NULL ***'
 \pset pager always
+\set HISTCONTROL ignoredups

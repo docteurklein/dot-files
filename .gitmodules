@@ -19,9 +19,6 @@
 [submodule "vim/pack/default/start/tabular"]
 	path = vim/pack/default/start/tabular
 	url = git@github.com:godlygeek/tabular.git
-[submodule "vim/pack/default/start/ragtag"]
-	path = vim/pack/default/start/ragtag
-	url = http://github.com/tpope/vim-ragtag.git
 [submodule "vim/pack/default/start/matchit"]
 	path = vim/pack/default/start/matchit
 	url = http://github.com/vim-scripts/matchit.zip.git
@@ -31,33 +28,15 @@
 [submodule "vim/pack/default/start/ctrlp"]
 	path = vim/pack/default/start/ctrlp
 	url = http://github.com/kien/ctrlp.vim
-[submodule "vim/pack/default/start/behat"]
-	path = vim/pack/default/start/behat
-	url = http://github.com/veloce/vim-behat.git
 [submodule "vim/pack/default/start/powerline"]
 	path = vim/pack/default/start/powerline
 	url = http://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/pack/default/start/abolish"]
-	path = vim/pack/default/start/abolish
-	url = https://github.com/tpope/vim-abolish.git
-[submodule "vim/pack/default/start/twig"]
-	path = vim/pack/default/start/twig
-	url = git://github.com/beyondwords/vim-twig.git
-[submodule "vim/pack/default/start/phpspec"]
-	path = vim/pack/default/start/phpspec
-	url = git://github.com/Herzult/phpspec-vim.git
-[submodule "vim/pack/default/start/vdebug"]
-	path = vim/pack/default/start/vdebug
-	url = git://github.com/joonty/vdebug.git
 [submodule "vim/pack/default/start/git-gutter"]
 	path = vim/pack/default/start/git-gutter
 	url = git://github.com/airblade/vim-gitgutter.git
 [submodule "vim/pack/default/start/ultisnips"]
 	path = vim/pack/default/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "git_template/hooks/composer-check"]
-	path = git_template/hooks/composer-check
-	url = git://gist.github.com/5867424.git
 [submodule "vim/pack/default/start/delimitate"]
 	path = vim/pack/default/start/delimitate
 	url = git://github.com/Raimondi/delimitMate.git
@@ -94,3 +73,6 @@
 [submodule "vim/pack/default/start/airline"]
 	path = vim/pack/default/start/airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/pack/default/start/elixir"]
+	path = vim/pack/default/start/elixir
+	url = https://github.com/elixir-editors/vim-elixir

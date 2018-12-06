@@ -7,4 +7,6 @@ vendor.tags
 .tmux.conf
 .exrc
 Guardfile
+.watch.sh
 .vimrc
+.env

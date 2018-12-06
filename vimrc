@@ -96,11 +96,9 @@ map <S-Left> :bprevious<CR>
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 " do a grep search on the selected text
-vmap <leader>f y:grep -r "<C-r>""
+vmap <leader>f y:grep -r '<C-r>"'
 " do a grep search on the word under cursor
-nmap <leader>f :grep -r "<C-r><C-w>"
-" search on php.net for current word
-command! Browse : ! xdg-open http://php.net/<cword>
+nmap <leader>f :grep -r '<C-r><C-w>'
 
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 cabbrev w!! W
@@ -122,8 +120,8 @@ nnoremap - 3<c-w><
 nnoremap <tab> <c-w><c-w>
 
 "command mode
-inoremap jj <Esc>
-"nnoremap VV :w<cr>
+inoremap <nowait> jj <Esc>
+nnoremap <nowait> vv :w<cr>
 
 " paste "0, ie: before-last yanked register
 nnoremap <leader>p "0p
@@ -162,11 +160,15 @@ autocmd FileType gitcommit,markdown setlocal spell
 " Restore cursor position
 autocmd BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
 " do not auto insert comment chars on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "au   InsertEnter   *   hi   CursorLine   gui=bold   cterm=bold
 "au   InsertLeave   *   hi   CursorLine   gui=none   cterm=none
+
+hi Normal ctermbg=NONE
+hi NonText ctermbg=NONE
 
 highlight link SyntasticStyleErrorSign SyntasticStyleWarningSign
 highlight link SyntasticStyleErrorLine SyntasticStyleWarningLine
@@ -187,29 +189,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 
-"let g:Powerline_symbols = 'unicode'
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
-
 if has('gui_running')
     set guifont=DejaVu\ Sans\ Mono\ For\ Powerline\ 12
     let g:Powerline_symbols = 'fancy'
 endif
-
-" Syntastic
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_enable_signs = 1
-"let g:syntastic_auto_loc_list = 2
-let g:syntastic_enable_balloons = 1
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_php_checkers=['php']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:elm_syntastic_show_warnings = 1
 
 let g:LustyJugglerShowKeys = 0
 let g:airline_powerline_fonts = 1
@@ -217,4 +200,10 @@ let g:airline#extensions#tmuxline#enabled = 0
 
 let g:loaded_sql_completion = 0
 let g:omni_sql_no_default_maps = 1
+
+
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+
+let g:gitgutter_async = 1
 
