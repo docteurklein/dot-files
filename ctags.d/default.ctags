@@ -1,21 +1,17 @@
 --totals=yes
 --recurse
 --exclude=.git
---extra=+f
+--extras=+f
 
 --fields=
 
---extra=+f
 --langdef=file
 --langmap=file:.eex.html.xml.css.xliff.xlf.sql
 
---php-kinds=cdfi
+--php-kinds=cdfint
 --regex-php=/Twig(_Simple)?(Function|Filter|Test)\(['"]([A-Za-z0-9_$]+)['"]/\3/
 --regex-php=/(given|when|then) (.*)/\2/i
 --regex-php=/namespace (.*)/\1/i
-
---python-kinds=-i
-
 
 --langdef=js
 --langmap=js:.js

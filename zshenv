@@ -8,6 +8,7 @@ export PATH=~/.bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=node_modules/.bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
 export PATH=bin:vendor/bin:$PATH
 #export PATH=$(ruby -rubygems -e "puts Gem.user_dir")/bin:$PATH
 export PATH=~/workspace/go/bin:$PATH
@@ -63,7 +64,12 @@ alias s="sudo -E systemctl"
 alias j="sudo -E journalctl"
 alias d="docker"
 alias k="kubectl"
+alias kl="kubectl logs --tail=100 -f"
+alias ke="kubectl exec -it"
+alias kg="kubectl get"
+alias kd="kubectl describe"
 alias ytj="ruby -ryaml -rjson -e 'puts JSON.generate(YAML.load(ARGF))'"
+alias o='xdg-open'
 
 function duh {
     du -h --max-depth=${2-1} "$1" | sort -hr

@@ -21,7 +21,7 @@ assign [class="Pavucontrol"] 2
 exec --no-startup-id compton --backend xrender
 
 bindsym $mod+t exec alacritty
-bindsym $mod+i exec chromium --disk-cache-dir=/tmp/cache "${@}"
+bindsym $mod+i exec firefox
 bindsym $mod+n exec nautilus "${@}"
 bindsym $mod+m exec thunderbird "${@}"
 bindsym $mod+x exec xkill
