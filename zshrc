@@ -8,7 +8,7 @@ promptinit
 prompt clint
 
 function prompt() {
-    export PROMPT="%F{green}%~%f $(test -d .git && echo "@$(git symbolic-ref --short HEAD) ($(git rev-parse --short HEAD))")
+    export PROMPT="%F{green}%~%f [$(git symbolic-ref --short HEAD 2> /dev/null)] @ $(git rev-parse --short HEAD 2> /dev/null)
 %F{yellow}[%? ${1}ms]
 %fλ "
 }
@@ -59,7 +59,13 @@ setopt nolisttypes
 setopt completeinword
 setopt alwaystoend
 #setopt correct
-setopt inc_append_history
+setopt interactivecomments
+
+setopt inc_append_history_time
+#setopt share_history
+export HISTFILE=~/.zsh_history
+export HISTSIZE=500000
+export SAVEHIST=500000
 
 bindkey "^xe" edit-command-line
 bindkey "^x^e" edit-command-line

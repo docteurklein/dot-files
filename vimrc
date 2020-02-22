@@ -6,7 +6,7 @@ let mapleader=","               " Use the comma as leader
 set exrc
 set nocompatible                " Use vim defaults
 filetype on
-filetype indent on
+filetype indent off
 filetype plugin on
 syntax on
 
@@ -15,6 +15,7 @@ set t_Co=256
 colorscheme jellybeans
 let g:jellybeans_use_lowcolor_black = 0
 
+set nomodeline
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -44,7 +45,7 @@ set noswapfile                    " Use an SCM instead of swap files
 set cursorline
 set cursorcolumn
 set laststatus=2                   " Show the status line all the time
-set completeopt=menuone
+set completeopt=menuone,preview,noinsert
 set pumheight=10
 set nofoldenable
 set scrolloff=5
@@ -58,7 +59,8 @@ set undolevels=1000             " use many levels of undo
 set noundofile
 "set cscopetag
 "set cscopetagorder=1
-set tags=tags,vendor.tags,pear.tags
+set tags=tags,vendor.tags
+if !empty(glob('*tags')) | exe 'set tags='.substitute(glob('*tags'), "\n", ',', 'g') | endif
 
 cscope add cscope.out
 cscope add cscope.vendor.out
@@ -173,7 +175,7 @@ hi NonText ctermbg=NONE
 highlight link SyntasticStyleErrorSign SyntasticStyleWarningSign
 highlight link SyntasticStyleErrorLine SyntasticStyleWarningLine
 
-highlight SpecialKey guibg=Red ctermbg=9
+"highlight SpecialKey guibg=Red ctermbg=9 " red tabs
 
 "let g:ctrlp_map = '<leader>t'
 nmap <leader>b :CtrlPBuffer<cr>
@@ -209,3 +211,9 @@ let g:ale_set_quickfix = 0
 
 let g:gitgutter_async = 0
 
+imap   <C-X><C-O>
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+let g:LanguageClient_serverCommands = {
+    \ 'haskell': ['ghcide', '--lsp'],
+    \ }
+let g:rainbow_active = 0

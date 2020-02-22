@@ -18,7 +18,7 @@ workspace_layout tabbed
 assign [class="Thunderbird"] 2
 assign [class="Pavucontrol"] 2
 
-exec --no-startup-id compton --backend xrender
+#exec --no-startup-id compton --backend xrender
 
 bindsym $mod+t exec alacritty
 bindsym $mod+i exec firefox

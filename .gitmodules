@@ -76,3 +76,18 @@
 [submodule "vim/pack/default/start/elixir"]
 	path = vim/pack/default/start/elixir
 	url = https://github.com/elixir-editors/vim-elixir
+[submodule "vim/pack/default/start/lsp"]
+	path = vim/pack/default/start/lsp
+	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "vim/pack/default/start/rainbow-bracket"]
+	path = vim/pack/default/start/rainbow-bracket
+	url = https://github.com/frazrepo/vim-rainbow
+[submodule "vim/pack/default/start/coc"]
+	path = vim/pack/default/start/coc
+	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/pack/default/start/async"]
+	path = vim/pack/default/start/async
+	url = https://github.com/prabirshrestha/async.vim
+[submodule "vim/pack/default/start/vim-lsp"]
+	path = vim/pack/default/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
